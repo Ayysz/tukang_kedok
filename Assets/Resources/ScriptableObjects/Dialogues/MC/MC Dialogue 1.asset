@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54001e8f2d8d4454eae9a55b314fc82d, type: 3}
-  m_Name: 2 Keong Mas
-  m_EditorClassIdentifier: Assembly-CSharp::MaskDataSO
-  id: 2
-  maxProgress: 8
+  m_Script: {fileID: 11500000, guid: 640454cc7fb1efa41bac46ab5ba98ccd, type: 3}
+  m_Name: MC Dialogue 1
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
+  lines:
+  - SpeakerName: 
+    Text: Iya sabar ya

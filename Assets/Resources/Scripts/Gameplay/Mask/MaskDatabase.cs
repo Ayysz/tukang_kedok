@@ -20,7 +20,7 @@ public class MaskDatabase : MonoBehaviour
             maskDictionary.Add(masks[i].id, masks[i]);
         }
     }
-    public MaskDataSO GetClient(int id)
+    public MaskDataSO GetMask(int id)
     {
         return maskDictionary[id];
     }

@@ -9,4 +9,6 @@ public class ClientData : ScriptableObject
     public ClientPeople clientPeople;
     public DialogueSO startDialogue;
     public DialogueSO doneDialogue;
+    public DialogueSO startMCDialogue;
+    public MaskDataSO maskDataSO;
 }

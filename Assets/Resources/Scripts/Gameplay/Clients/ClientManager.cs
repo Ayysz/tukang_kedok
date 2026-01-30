@@ -17,15 +17,14 @@ public class ClientManager : MonoBehaviour
     }
     public void SpawnClientPeople(ClientData data)
     { 
-
         ClientPeople people = Instantiate(data.clientPeople,clientPeoplePos.transform.position,Quaternion.identity);
         currentClientPeople = people;
         people.SetDataFirstTime(data);
         people.transform.DOMove(clientPeopleStopPos.position,1f).SetEase(Ease.OutQuad).OnComplete(ClientStop);
-
     }
     public void ClientStop()
     {
         currentClientPeople.StartClient();
+        
     }
 }

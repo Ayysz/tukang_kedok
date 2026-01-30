@@ -4,14 +4,26 @@ using UnityEngine;
 public class MaskData
 {
     public int maskID;
-    public string progress;
-    public MaskData(int maskID, string progress)
+    public int currentProgress;
+    public int MaxProgress()
+    { 
+        return GetMaskDataSO().maxProgress;
+    }
+    public MaskData(int maskID, int progress)
     {
         this.maskID = maskID;
-        this.progress = progress;
+        this.currentProgress = progress;
     }
-    /*public MaskDataSO GetMaskDataSO()
-    { 
-    }*/
+    public MaskDataSO GetMaskDataSO()
+    {
+        return MaskDatabase.Instance.GetMask(maskID);
+    }
 
+}
+
+public enum CraftingType
+{ 
+    Sculpting,
+    MakingHole,
+    Painting,
 }
