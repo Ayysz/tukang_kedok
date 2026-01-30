@@ -15,8 +15,16 @@ public class ClickDetector : MonoBehaviour
             {
                 if (hit.collider.CompareTag("Tools"))
                 {
-                    Debug.Log("Klik object interactable: " + hit.collider.name);
                     ToolButton toolButton = hit.collider.GetComponent<ToolButton>();
+                    toolButton.Clicked();
+                    ClientPeople cp = GameManager.Instance.clientManager.currentClientPeople;
+                    int curProgress = cp.GetMaskData().currentProgress;
+                    if (cp.GetMaskData().GetMaskDataSO().craftingTypes[curProgress] == toolButton.CraftingType)
+                    {
+                        Debug.Log("Painting Clicked, Add Proggress");
+                        cp.AddProggress();
+                    }
+                  
                 }
             }
         }

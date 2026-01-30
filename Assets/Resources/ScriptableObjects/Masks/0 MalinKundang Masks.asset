@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: 0 MalinKundang Masks
   m_EditorClassIdentifier: Assembly-CSharp::MaskDataSO
   id: 0
-  maxProgress: 5
+  maxProgress: 6
+  craftingTypes: 000000000000000001000000000000000100000002000000

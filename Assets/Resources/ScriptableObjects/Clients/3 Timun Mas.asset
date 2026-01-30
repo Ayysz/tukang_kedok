@@ -15,6 +15,8 @@ MonoBehaviour:
   id: 3
   clientName: Timun Mas
   clientDescription: 
-  clientPeople: {fileID: 0}
-  startDialogue: []
-  doneDialogue: []
+  clientPeople: {fileID: 7746896139397401030, guid: f8e72b74202f2bf468220db7f42d8950, type: 3}
+  startDialogue: {fileID: 11400000, guid: 48b98f20a47310f4c97800304d57c125, type: 2}
+  doneDialogue: {fileID: 11400000, guid: 23936a1c1a160db42b926a30992e6051, type: 2}
+  startMCDialogue: {fileID: 11400000, guid: d24e255b28935f64388f16993ea1e8cc, type: 2}
+  maskDataSO: {fileID: 11400000, guid: 335e301c6f7798645bef947648a484dd, type: 2}

@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MaskDataSO
   id: 1
   maxProgress: 5
+  craftingTypes: 0000000000000000000000000000000000000000
