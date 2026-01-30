@@ -2,15 +2,19 @@ using UnityEngine;
 
 public class ClientPeople : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private Canvas canvas;
+    [SerializeField] private DialogueController dialogue;
+    ClientData data;
+    public void SetDataFirstTime(ClientData data)
     {
-        
+        this.data = data;
     }
-
-    // Update is called once per frame
-    void Update()
+    public void StartClient()
     {
-        
+        dialogue.SetDialogue(data.startDialogue,DoneStart);
+    }
+    public void DoneStart()
+    {
+        Debug.Log("Done Start!");
     }
 }

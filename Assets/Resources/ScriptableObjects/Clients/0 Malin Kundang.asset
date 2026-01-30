@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 562558e714b985344ba2bef12f09b406, type: 3}
+  m_Name: 0 Malin Kundang
+  m_EditorClassIdentifier: Assembly-CSharp::ClientData
+  id: 0
+  clientName: Malin Kundang
+  clientDescription: 
+  clientPeople: {fileID: 7746896139397401030, guid: e9ce26f048c8c7245bc86aba19e1c18a, type: 3}
+  startDialogue: {fileID: 11400000, guid: 48b98f20a47310f4c97800304d57c125, type: 2}
+  doneDialogue: {fileID: 11400000, guid: 23936a1c1a160db42b926a30992e6051, type: 2}

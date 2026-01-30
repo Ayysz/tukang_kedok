@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class MinigamePlayController : MonoBehaviour
+public class MinigamePlayController : UIManager
 {
     public Action OnStartMinigame;
     public Action OnEndMinigame;
