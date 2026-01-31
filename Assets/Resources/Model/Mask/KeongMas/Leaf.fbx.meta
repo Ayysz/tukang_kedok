@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: c24fc29dd462bd04690e7e170a8c518e
+guid: ea9bc1887dd8bd048bd0d73a23fffc9d
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Leaf Bake
-    second: {fileID: 2100000, guid: 0eaea1d0e3d28d54f9d9c999ef27bb00, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

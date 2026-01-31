@@ -1,26 +1,11 @@
 fileFormatVersion: 2
-guid: a4fba94f9e62ce34699b898fb6906fcd
+guid: 979eeede860684a428e693069205b61f
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: KeongMasLeafMat
-    second: {fileID: 2100000, guid: 30430135af31f50498f4d072391d6464, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: KeongMasMaskMat
-    second: {fileID: 2100000, guid: a3733608a4550f54fa9377619443e41a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: KeongMasSnailMat
-    second: {fileID: 2100000, guid: 54874f36dd4888c4abf87585ffcf3e85, type: 2}
+  externalObjects: {}
   materials:
-    materialImportMode: 1
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
     materialLocation: 1

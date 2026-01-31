@@ -14,3 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MaskDataSO
   id: 2
   maxProgress: 8
+  craftingTypes: 0000000001000000020000000000000000000000000000000000000001000000
+  minigameSettingDatas:
+  - {fileID: 11400000, guid: 607bcf2cc7399ab41bd96d7f6550b628, type: 2}
+  - {fileID: 11400000, guid: a983d4497284dbe4ebb6385cf4817e52, type: 2}
+  - {fileID: 11400000, guid: a983d4497284dbe4ebb6385cf4817e52, type: 2}
+  - {fileID: 11400000, guid: 607bcf2cc7399ab41bd96d7f6550b628, type: 2}
+  - {fileID: 11400000, guid: a983d4497284dbe4ebb6385cf4817e52, type: 2}
+  - {fileID: 11400000, guid: a983d4497284dbe4ebb6385cf4817e52, type: 2}

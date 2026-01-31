@@ -1,54 +1,9 @@
 fileFormatVersion: 2
-guid: cd13b973a74fe3e44b2a455f4610c3b4
+guid: ecabc65261bd4694bb47c72d16083461
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Cucumber
-    second: {fileID: 2100000, guid: a5cea88de4e40fb47bd38a9fa8fc340f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Cucumber Slice
-    second: {fileID: 2100000, guid: b707615082c5b184d99eedafb7516211, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Cucumber Step
-    second: {fileID: 2100000, guid: bb4c0f57a133a9047a6a9c75c72b251d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Mask step
-    second: {fileID: 2100000, guid: d9de2f00336c4664fa88e8c5dcdb48fb, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Needle
-    second: {fileID: 2100000, guid: 78856f1d108a02d4881bfae9b6ae0fca, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: NeedleStep
-    second: {fileID: 2100000, guid: d75f3f571e7bd3c4aaa3e66dccd2e27c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Sugar
-    second: {fileID: 2100000, guid: 7f2d96958e5e6a54b9ae85682fafd138, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Timun Mas Bake
-    second: {fileID: 2100000, guid: 015696c6c2c530443853a567ecffb5a5, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Timun Mas Bake.001
-    second: {fileID: 2100000, guid: 015696c6c2c530443853a567ecffb5a5, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

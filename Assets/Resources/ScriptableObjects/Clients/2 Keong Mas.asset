@@ -15,6 +15,8 @@ MonoBehaviour:
   id: 2
   clientName: Keong Mas
   clientDescription: 
-  clientPeople: {fileID: 0}
-  startDialogue: []
-  doneDialogue: []
+  clientPeople: {fileID: 7746896139397401030, guid: fd74cc58963177442a3c436c77a62471, type: 3}
+  startDialogue: {fileID: 11400000, guid: 48b98f20a47310f4c97800304d57c125, type: 2}
+  doneDialogue: {fileID: 11400000, guid: 23936a1c1a160db42b926a30992e6051, type: 2}
+  startMCDialogue: {fileID: 11400000, guid: d24e255b28935f64388f16993ea1e8cc, type: 2}
+  maskDataSO: {fileID: 11400000, guid: 27cd8172e3c1c374ba86a2b85517e571, type: 2}

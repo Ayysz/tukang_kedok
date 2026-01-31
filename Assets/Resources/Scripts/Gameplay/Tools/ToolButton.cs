@@ -2,8 +2,11 @@ using UnityEngine;
 
 public class ToolButton : MonoBehaviour
 {
+    public CraftingType CraftingType;
     public void Clicked()
-    { 
-        Debug.Log("Tool button clicked!");
+    {
+        Debug.Log("Clicked Tool " + CraftingType);
     }
+    
+
 }

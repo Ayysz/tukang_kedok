@@ -1,4 +1,6 @@
 using UnityEngine;
+using DG.Tweening;
+using System.Collections;
 
 public class ClientPeople : MonoBehaviour
 {
@@ -15,6 +17,17 @@ public class ClientPeople : MonoBehaviour
     {
         dialogue.SetDialogue(data.startDialogue,DoneStart);
     }
+    public void AddProggress()
+    {
+        maskData.AddProggress();
+        GameManager.Instance.UpdateTaskAtas();
+        if (maskData.isCompleted)
+        {
+            Debug.Log("Complete");
+            dialogue.SetDialogue(data.doneDialogue, DoneEnd);
+        }
+
+    }
     public MaskData GetMaskData()
     {
         return maskData;
@@ -25,8 +38,24 @@ public class ClientPeople : MonoBehaviour
         maskData = new MaskData(data.maskDataSO.id, 0);
         GameManager.Instance.playerDialogue.SetDialogue(data.startMCDialogue,AfterFirstMCDialogue);
     }
+    public void DoneEnd()
+    {
+        // Animasi Client Done 
+        //Camera Zoom in
+        // Animasi Idle
+        //GameManager.Instance.ClientDone();
+        GameManager.Instance.AddScore(maskData);
+        StartCoroutine(DoneEndDelay());
+    }
+    private IEnumerator DoneEndDelay()
+    {
+        yield return new WaitForSeconds(2f);
+        GameManager.Instance.ClientDone();
+
+    }
     public void AfterFirstMCDialogue()
     {
         Debug.Log("FirstMCDialogueDone");
+        GameManager.Instance.UpdateTaskAtas();
     }
 }
