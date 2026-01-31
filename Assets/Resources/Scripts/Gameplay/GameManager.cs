@@ -8,7 +8,8 @@ using UnityEngine;
 public enum CameraType
 { 
     mainGame,
-    MinigameHole
+    MinigameHole,
+    MinigameSculpt
 }
 
 public class GameManager : MonoBehaviour
@@ -95,7 +96,7 @@ public class GameManager : MonoBehaviour
             MaskData md = clientManager.currentClientPeople.GetMaskData();
             MinigameSculptDataSO setting = md.GetMaskDataSO().minigameSettingDatas[md.currentProgress] as MinigameSculptDataSO;
             minigameControllers[1].OnEndMinigame += MinigameClear;
-            ChangeCamera(CameraType.MinigameHole);
+            ChangeCamera(CameraType.MinigameSculpt);
             minigameControllers[1].StartMinigame(setting);
             isMainGame = false;
 
@@ -141,6 +142,10 @@ public class GameManager : MonoBehaviour
         else if (type == CameraType.MinigameHole)
         {
             cameraChangeController.ChangeCameraActive(1);
+        }
+        else if (type == CameraType.MinigameSculpt)
+        {
+            cameraChangeController.ChangeCameraActive(2);
         }
     }
     

@@ -247,7 +247,9 @@ public class MiniGameQTEBarController : MinigamePlayController
     }
     public IEnumerator EndGame()
     {
-        yield return new WaitForSeconds(1);
+        EndMinigameScene();
+        Hide();
+        yield return new WaitForSeconds(2);
         EndMinigame();
     }
 
@@ -270,10 +272,10 @@ public class MiniGameQTEBarController : MinigamePlayController
     }
     void ShakeTheCamera()
     {
-        if (!ShakeCamera.enabled)
+        /*if (!ShakeCamera.enabled)
         {
             StartCoroutine(PlayCameraShake());
-        }
+        }*/
     }
 
 }

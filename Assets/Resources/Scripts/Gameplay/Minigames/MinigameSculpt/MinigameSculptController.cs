@@ -63,16 +63,17 @@ public class MinigameSculptController : MinigamePlayController
     {
         Debug.Log("Sculpt Win");
         isPlaying = false;
-    
+        EndMinigameScene();
+        foreach (Transform t in parent)
+        {
+            Destroy(t.gameObject);
+        }
         StartCoroutine(WinDelay());
     }
     public IEnumerator WinDelay()
     {
         yield return new WaitForSeconds(2f);
-        foreach (Transform t in parent)
-        {
-            Destroy(t.gameObject);
-        }
+     
         EndMinigame();
     }
     public void Fail()

@@ -22,3 +22,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e37bf06bf8f0fca43966aaa259748f05, type: 2}
   - {fileID: 11400000, guid: a983d4497284dbe4ebb6385cf4817e52, type: 2}
   - {fileID: 11400000, guid: a983d4497284dbe4ebb6385cf4817e52, type: 2}
+  maskDisplayPrefab: {fileID: 4104699208285434490, guid: a3be919b6460fd6459d7d6fb21343e8a, type: 3}
