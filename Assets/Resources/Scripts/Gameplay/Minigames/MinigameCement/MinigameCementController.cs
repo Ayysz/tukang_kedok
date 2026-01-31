@@ -26,6 +26,9 @@ public class MinigameCementController : MinigamePlayController
     public override void StartMinigame(MinigameSettingDataSO dataSetting)
     {
         base.StartMinigame(dataSetting);
+        toolsAnimator.gameObject.SetActive(true);
+        toolsAnimator.SetTrigger("Cungkil Start Cement");
+
         circleLeft = cementCircleList.Count;
         for (int i = 0; i < cementCircleList.Count; i++)
         {
@@ -42,6 +45,7 @@ public class MinigameCementController : MinigamePlayController
         {
             isPlaying = false;
             StartCoroutine(EndGame());
+            toolsAnimator.SetTrigger("Cungkil Cement");
         }
     }
     public IEnumerator EndGame()

@@ -11,10 +11,14 @@ public class MinigamePlayController : UIManager
     public MinigameSettingDataSO dataSetting;
     public Transform maskParent;
     protected MaskDisplay maskDisplay;
+    public Animator toolsAnimator;
+    public Animator maskAnimator;
     public MaskDisplay GetMaskDisplay()
     {
         return maskDisplay;
     }
+
+
     private void OnDestroy()
     {
         OnStartMinigame = null;

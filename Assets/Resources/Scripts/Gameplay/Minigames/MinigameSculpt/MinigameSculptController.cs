@@ -40,6 +40,9 @@ public class MinigameSculptController : MinigamePlayController
     public override void StartMinigame(MinigameSettingDataSO dataSetting)
     {
         base.StartMinigame(dataSetting);
+        toolsAnimator.gameObject.SetActive(true);
+        toolsAnimator.SetTrigger("Hammer Start");
+       
         circleCount = targetCircleDatas.Count;
         totalScore = 0;
         curCircleCount = 0;
@@ -64,6 +67,7 @@ public class MinigameSculptController : MinigamePlayController
     {
         Debug.Log("Sculpt Win");
         isPlaying = false;
+        toolsAnimator.gameObject.SetActive(false);
         EndMinigameScene();
         foreach (Transform t in parent)
         {
@@ -82,12 +86,15 @@ public class MinigameSculptController : MinigamePlayController
         AddCircleCount();
         totalScore += failScore;
         Debug.Log("Fail");
+        toolsAnimator.SetTrigger("Hammer Slow");
     }
     public void Good()
     {
         AddCircleCount();
         totalScore += GoodScore;
         Debug.Log("Good");
+        toolsAnimator.SetTrigger("Hammer Slow");
+
 
     }
     public void Great()
@@ -95,6 +102,8 @@ public class MinigameSculptController : MinigamePlayController
         AddCircleCount();
         totalScore += GreatScore;
         Debug.Log("Great");
+        toolsAnimator.SetTrigger("Hammer Slow");
+
 
     }
     public void Perfect()
@@ -102,6 +111,7 @@ public class MinigameSculptController : MinigamePlayController
         AddCircleCount();
         totalScore += PerfectScore;
         Debug.Log("Perfect");
+        toolsAnimator.SetTrigger("Hammer Hard");
     }
     public IEnumerator SpawnTargetCircle(float delay,TargetCircleData tcd)
     {
