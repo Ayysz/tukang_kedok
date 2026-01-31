@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public ClientData CurrentClientData;
     public ClientManager clientManager;
     public DialogueController playerDialogue;
+    public TaskController taskAtasController;
 
     public MaskData MaskData;
 
@@ -24,6 +25,17 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(StartGameCoroutine());
+    }
+
+    public void UpdateTaskAtas()
+    {
+        taskAtasController.Show();
+        ClientPeople cp = clientManager.currentClientPeople;
+        taskAtasController.SetTaskLines(cp.GetMaskData().GetMaskDataSO().craftingTypes, cp.GetMaskData().currentProgress);
+    }
+    public void HideTaskAtas()
+    {
+        taskAtasController.Hide();
     }
     private IEnumerator StartGameCoroutine()
     {

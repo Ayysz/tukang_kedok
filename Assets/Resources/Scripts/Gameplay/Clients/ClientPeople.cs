@@ -15,18 +15,18 @@ public class ClientPeople : MonoBehaviour
     }
     public void StartClient()
     {
-     
         dialogue.SetDialogue(data.startDialogue,DoneStart);
     }
     public void AddProggress()
     {
         maskData.AddProggress();
+        GameManager.Instance.UpdateTaskAtas();
         if (maskData.isCompleted)
         {
             Debug.Log("Complete");
             dialogue.SetDialogue(data.doneDialogue, DoneEnd);
         }
-       
+
     }
     public MaskData GetMaskData()
     {
@@ -56,5 +56,6 @@ public class ClientPeople : MonoBehaviour
     public void AfterFirstMCDialogue()
     {
         Debug.Log("FirstMCDialogueDone");
+        GameManager.Instance.UpdateTaskAtas();
     }
 }
