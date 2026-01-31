@@ -24,7 +24,7 @@ public class MinigamePaintingController : MinigamePlayController
     public override void SpawnMask(MaskDisplay display, int progress)
     {
         base.SpawnMask(display, progress);
-        GameObject go = display.GetProgression(progress);
+        GameObject go = maskDisplay.GetProgression(progress);
         sandingPainter = go.GetComponent<SandingPainter>();
         sandingInputOld = go.GetComponent<SandingInputOld>();
         sandingProgression = go.GetComponent<SandingProgression>();
@@ -40,6 +40,7 @@ public class MinigamePaintingController : MinigamePlayController
     }
     public void Finish()
     {
+        Debug.Log("Minigame Painting Finished");
         StartCoroutine(EndGame());
     }
     public IEnumerator EndGame()

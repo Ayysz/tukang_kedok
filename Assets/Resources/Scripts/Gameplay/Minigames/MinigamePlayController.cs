@@ -10,6 +10,11 @@ public class MinigamePlayController : UIManager
     public bool isPlaying = false;
     public MinigameSettingDataSO dataSetting;
     public Transform maskParent;
+    protected MaskDisplay maskDisplay;
+    public MaskDisplay GetMaskDisplay()
+    {
+        return maskDisplay;
+    }
     private void OnDestroy()
     {
         OnStartMinigame = null;
@@ -19,6 +24,7 @@ public class MinigamePlayController : UIManager
     {
         MaskDisplay md = Instantiate(display, maskParent.transform.position, maskParent.transform.rotation, maskParent);
         md.DisplayMask(progress);
+        maskDisplay = md;
     }
     public virtual void StartMinigame(MinigameSettingDataSO dataSetting)
     {
