@@ -25,14 +25,18 @@ public class ClientPeople : MonoBehaviour
     public void AddProggress()
     {
         maskData.AddProggress();
-        GameManager.Instance.UpdateTaskAtas();
+
         if (maskData.isCompleted)
         {
             Debug.Log("Complete");
             dialogue.SetDialogue(data.doneDialogue, DoneEnd);
             GameManager.Instance.AfterOkay();
+            GameManager.Instance.HideTaskAtas();
         }
-
+        else
+        {
+            GameManager.Instance.UpdateTaskAtas();
+        }
     }
     public MaskData GetMaskData()
     {

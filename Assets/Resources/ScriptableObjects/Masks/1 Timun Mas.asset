@@ -10,18 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54001e8f2d8d4454eae9a55b314fc82d, type: 3}
-  m_Name: 0 MalinKundang Masks
+  m_Name: 1 Timun Mas
   m_EditorClassIdentifier: Assembly-CSharp::MaskDataSO
-  id: 0
-  maxProgress: 8
-  craftingTypes: 0000000002000000010000000300000000000000010000000200000003000000
+  id: 1
+  maxProgress: 7
+  craftingTypes: 00000000020000000100000000000000020000000000000000000000
   minigameSettingDatas:
   - {fileID: 11400000, guid: e37bf06bf8f0fca43966aaa259748f05, type: 2}
   - {fileID: 11400000, guid: f0567356b84e5d0459f91146278593b1, type: 2}
-  - {fileID: 11400000, guid: a983d4497284dbe4ebb6385cf4817e52, type: 2}
-  - {fileID: 11400000, guid: b503305eebba61845904b0e11b076776, type: 2}
+  - {fileID: 11400000, guid: 607bcf2cc7399ab41bd96d7f6550b628, type: 2}
   - {fileID: 11400000, guid: e37bf06bf8f0fca43966aaa259748f05, type: 2}
-  - {fileID: 11400000, guid: a983d4497284dbe4ebb6385cf4817e52, type: 2}
   - {fileID: 11400000, guid: f0567356b84e5d0459f91146278593b1, type: 2}
-  - {fileID: 11400000, guid: b503305eebba61845904b0e11b076776, type: 2}
-  maskDisplayPrefab: {fileID: 4104699208285434490, guid: a3be919b6460fd6459d7d6fb21343e8a, type: 3}
+  - {fileID: 11400000, guid: e37bf06bf8f0fca43966aaa259748f05, type: 2}
+  - {fileID: 11400000, guid: e37bf06bf8f0fca43966aaa259748f05, type: 2}
+  maskDisplayPrefab: {fileID: 4104699208285434490, guid: 159005ba40670e84c9258bc0abeea75d, type: 3}
