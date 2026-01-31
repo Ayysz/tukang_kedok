@@ -12,6 +12,7 @@ public class MinigameCementCircle : MonoBehaviour
     [SerializeField] private float sizeShrinkValue;
     private float targetSize;
     private bool isShrink;
+    private float speed = 10f;
     bool isActive;
 
     public Action OnDestroyed;
@@ -24,6 +25,8 @@ public class MinigameCementCircle : MonoBehaviour
         this.sizeShrinkValue = sizeShrinkValue;
         targetSize = startSize;
         isActive = true;
+        speed = sizeShrinkValue*5f;
+        rectTransform.sizeDelta = new Vector2(curSize, curSize);
     }
     public void Shrink()
     {
@@ -34,7 +37,7 @@ public class MinigameCementCircle : MonoBehaviour
         if (!isActive) return;
         if (curSize > targetSize)
         {
-            curSize -= Time.deltaTime;
+            curSize -= Time.deltaTime *speed;
             rectTransform.sizeDelta = new Vector2(curSize, curSize);
             if (curSize < 0)
             {

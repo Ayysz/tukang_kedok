@@ -342,6 +342,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d049822f313b4cf41a3b8728411de1ce, type: 3}
   - {fileID: 21300000, guid: 6a1dec15682b5d043ba3cc95130a9a9b, type: 3}
   - {fileID: 21300000, guid: a3e30ef8e08510644b6821df2dcd633e, type: 3}
+  - {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   icon: {fileID: 2394519011769931773}
   taskText: {fileID: 5092151160546499810}
   clearedObject: {fileID: 2001651063454630962}

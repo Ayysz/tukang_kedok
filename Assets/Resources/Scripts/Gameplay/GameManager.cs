@@ -125,6 +125,15 @@ public class GameManager : MonoBehaviour
             isMainGame = false;
 
         }
+        else if (craftingType == CraftingType.Cement)
+        {
+            MaskData md = clientManager.currentClientPeople.GetMaskData();
+            MinigameCementSettingSO holeSetting = md.GetMaskDataSO().minigameSettingDatas[md.currentProgress] as MinigameCementSettingSO;
+            minigameControllers[3].OnEndMinigame += MinigameClear;
+            ChangeCamera(CameraType.mainGame);
+            minigameControllers[3].StartMinigame(holeSetting);
+            isMainGame = false;
+        }
     }
     public void MinigameClear()
     {
