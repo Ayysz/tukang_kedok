@@ -20,6 +20,8 @@ public class MinigameSaltBorder : MonoBehaviour
     Vector2 targetPos;
     float timer;
 
+    private bool isWin = false;
+
     void Start()
     {
         PickRandomPosition();
@@ -27,8 +29,14 @@ public class MinigameSaltBorder : MonoBehaviour
 
     void Update()
     {
+        if (isWin) return;
         Move();
         Shrink();
+    }
+
+    public void SetWin()
+    {
+        isWin = true;
     }
 
     void Move()
