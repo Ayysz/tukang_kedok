@@ -5,11 +5,12 @@ TagManager:
   serializedVersion: 3
   tags:
   - Tools
+  - Leaf
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Mask
   - Water
   - UI
   - 
