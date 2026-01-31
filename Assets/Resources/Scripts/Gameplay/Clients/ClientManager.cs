@@ -25,6 +25,7 @@ public class ClientManager : MonoBehaviour
     { 
         ClientPeople people = Instantiate(data.clientPeople,clientPeoplePos.transform.position,Quaternion.identity);
         currentClientPeople = people;
+        people.SetDialogue(GameManager.Instance.mainDialogue);
         people.SetDataFirstTime(data);
         people.transform.DOMove(clientPeopleStopPos.position,1f).SetEase(Ease.OutQuad).OnComplete(ClientStop);
     }

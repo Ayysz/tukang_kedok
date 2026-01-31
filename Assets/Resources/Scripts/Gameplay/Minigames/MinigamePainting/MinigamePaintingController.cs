@@ -28,6 +28,8 @@ public class MinigamePaintingController : MinigamePlayController
         sandingPainter = go.GetComponent<SandingPainter>();
         sandingInputOld = go.GetComponent<SandingInputOld>();
         sandingProgression = go.GetComponent<SandingProgression>();
+        RotateWithRightClick rotateWithRightClick = go.GetComponent<RotateWithRightClick>();
+        sandingInputOld.isSanding = true;
         sandingInputOld.mainCamera = cam;
         sandingProgression.OnFinished += Finish;
         StartCoroutine(delayMainCamera());

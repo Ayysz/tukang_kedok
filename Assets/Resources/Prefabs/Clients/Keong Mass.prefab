@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 556542673263229143}
   - component: {fileID: 7746896139397401030}
   - component: {fileID: 2115263136429041829}
-  m_Layer: 5
-  m_Name: Keong Mas
-  m_TagString: WorldUI
+  m_Layer: 0
+  m_Name: Keong Mass
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,10 +49,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClientPeople
   canvas: {fileID: 4298493574499882498}
   dialogue: {fileID: 3997525555034084839}
-  maskData:
-    maskID: 0
-    currentProgress: 0
-    isCompleted: 0
 --- !u!114 &2115263136429041829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,9 +73,9 @@ GameObject:
   - component: {fileID: 1342193021403205434}
   - component: {fileID: 4013051943572146926}
   - component: {fileID: 1735334205212016548}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Next
-  m_TagString: WorldUI
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,7 +88,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2948834521112529254}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -101,8 +97,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.752, y: -0.488}
-  m_SizeDelta: {x: 0.5735, y: 0.2009}
+  m_AnchoredPosition: {x: 1.2100002, y: -0.76000005}
+  m_SizeDelta: {x: 1.2122, y: 0.63565}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1342193021403205434
 CanvasRenderer:
@@ -132,8 +128,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7482667652216324306, guid: b4a2d17e35d09794090147d36a8da0f1, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -210,9 +206,9 @@ GameObject:
   - component: {fileID: 2861206077861050076}
   - component: {fileID: 2684760893539686699}
   - component: {fileID: 4080203232404347181}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Bubble
-  m_TagString: WorldUI
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -225,7 +221,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3063160509169502049}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -236,8 +232,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.3897, y: 0.0157}
-  m_SizeDelta: {x: 2.1289, y: 0.5772}
+  m_AnchoredPosition: {x: 0.69, y: -0.03}
+  m_SizeDelta: {x: 2.7295, y: 0.7368}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2861206077861050076
 CanvasRenderer:
@@ -304,9 +300,9 @@ GameObject:
   - component: {fileID: 5831213889916964905}
   - component: {fileID: 4970971144343178288}
   - component: {fileID: 3997525555034084839}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: DialogueCanvas
-  m_TagString: WorldUI
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -319,8 +315,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4299818126556612647}
   m_LocalRotation: {x: -0, y: 0.0000029653306, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.379}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5776197870663974949}
@@ -328,8 +324,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.16, y: 0.49}
-  m_SizeDelta: {x: 3.4227, y: 1.6309}
+  m_AnchoredPosition: {x: 1, y: 1}
+  m_SizeDelta: {x: 5.996, y: 2.8571}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4298493574499882498
 Canvas:
@@ -420,9 +416,9 @@ GameObject:
   - component: {fileID: 7285493548961279415}
   - component: {fileID: 4519711929848629918}
   - component: {fileID: 9093649888919447808}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Nama
-  m_TagString: WorldUI
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -443,8 +439,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.24, y: -0.5}
-  m_SizeDelta: {x: 210.76, y: 18.404}
+  m_AnchoredPosition: {x: 0.268, y: 0.581}
+  m_SizeDelta: {x: 330.2, y: 28.2815}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4519711929848629918
 CanvasRenderer:
@@ -557,9 +553,9 @@ GameObject:
   - component: {fileID: 728550071281617046}
   - component: {fileID: 1182850929345076889}
   - component: {fileID: 5876356285494048631}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (TMP)
-  m_TagString: WorldUI
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -638,8 +634,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 11
-  m_fontSizeBase: 11
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -694,9 +690,9 @@ GameObject:
   - component: {fileID: 1120327192931096702}
   - component: {fileID: 6044819002737942561}
   - component: {fileID: 4847825005595542166}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
-  m_TagString: WorldUI
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -717,8 +713,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.063, y: 0.0233}
-  m_SizeDelta: {x: 198.0869, y: 52.4897}
+  m_AnchoredPosition: {x: 0.010499954, y: 0.0106}
+  m_SizeDelta: {x: 268.7772, y: 72.8908}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6044819002737942561
 CanvasRenderer:
@@ -777,11 +773,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15.9
+  m_fontSize: 21.95
   m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 8
+  m_fontSizeMin: 12
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
