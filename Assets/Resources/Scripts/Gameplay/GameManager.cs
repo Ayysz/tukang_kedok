@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
     public DialogueController mainDialogue;
     public bool isMainGame;
 
+    public ToolManager toolManager;
+
     private void Awake()
     {
         Instance = this;
@@ -46,6 +48,7 @@ public class GameManager : MonoBehaviour
         taskAtasController.Show();
         ClientPeople cp = clientManager.currentClientPeople;
         taskAtasController.SetTaskLines(cp.GetMaskData().GetMaskDataSO().craftingTypes, cp.GetMaskData().currentProgress);
+        toolManager.SelectTool(cp.GetMaskData().GetMaskDataSO().craftingTypes[cp.GetMaskData().currentProgress]);
     }
     public void AfterOkay()
     {

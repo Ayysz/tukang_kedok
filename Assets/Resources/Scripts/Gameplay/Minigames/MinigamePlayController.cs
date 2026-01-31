@@ -13,6 +13,8 @@ public class MinigamePlayController : UIManager
     protected MaskDisplay maskDisplay;
     public Animator toolsAnimator;
     public Animator maskAnimator;
+
+    public int score;
     public MaskDisplay GetMaskDisplay()
     {
         return maskDisplay;
@@ -48,6 +50,8 @@ public class MinigamePlayController : UIManager
     public virtual void EndMinigame()
     {
         Hide();
+        GameManager.Instance.clientManager.currentClientPeople.GetMaskData().AddScore(score);
+        score = 0;
         Debug.Log("EndMinigame");
         isPlaying = false;
         OnEndMinigame?.Invoke();

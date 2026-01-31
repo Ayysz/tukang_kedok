@@ -10,6 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6732609441215430883}
   - component: {fileID: 6136254405705359909}
+  - component: {fileID: 4741848225220427010}
+  - component: {fileID: 9094685937993068198}
+  - component: {fileID: 4343635117817230207}
   m_Layer: 0
   m_Name: MaskStep3 Sanding
   m_TagString: Untagged
@@ -49,7 +52,55 @@ MonoBehaviour:
   rotateX: 1
   rotateY: 1
   rotateZ: 0
-  isCanRotate: 0
+  isCanRotate: 1
+--- !u!114 &4741848225220427010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249834863561749688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a04ac07ae5c66744b924026bbd4b11a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SandingProgression
+  painter: {fileID: 9094685937993068198}
+  finishTarget: 0.2
+--- !u!114 &9094685937993068198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249834863561749688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89ae0d2ab17c6b488c2a9316f8fba26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SandingPainter
+  targetRenderer: {fileID: 3745181028647095546}
+  textureSize: 1024
+  brushSize: 60
+  brushStrength: 0.65
+--- !u!114 &4343635117817230207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249834863561749688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09263faebdb28154ca3f37e1670603ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SandingInputOld
+  mainCamera: {fileID: 0}
+  painter: {fileID: 9094685937993068198}
+  sandingLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  isSanding: 1
 --- !u!1 &384350938320856467
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,9 +309,6 @@ GameObject:
   - component: {fileID: 3544568709610256191}
   - component: {fileID: 710539657314770794}
   - component: {fileID: 3745181028647095546}
-  - component: {fileID: 5901232253440030918}
-  - component: {fileID: 686479088350787080}
-  - component: {fileID: 1715311586978387734}
   - component: {fileID: 1259703838056832108}
   m_Layer: 6
   m_Name: MaskStep3 Sanding
@@ -341,54 +389,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5901232253440030918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2179425907774959868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09263faebdb28154ca3f37e1670603ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SandingInputOld
-  mainCamera: {fileID: 0}
-  painter: {fileID: 686479088350787080}
-  sandingLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  isSanding: 1
---- !u!114 &686479088350787080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2179425907774959868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b89ae0d2ab17c6b488c2a9316f8fba26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SandingPainter
-  targetRenderer: {fileID: 3745181028647095546}
-  textureSize: 1024
-  brushSize: 60
-  brushStrength: 0.65
---- !u!114 &1715311586978387734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2179425907774959868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a04ac07ae5c66744b924026bbd4b11a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SandingProgression
-  painter: {fileID: 686479088350787080}
-  finishTarget: 0.2
 --- !u!64 &1259703838056832108
 MeshCollider:
   m_ObjectHideFlags: 0
