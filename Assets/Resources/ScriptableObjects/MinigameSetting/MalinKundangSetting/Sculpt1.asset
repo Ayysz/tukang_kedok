@@ -15,6 +15,7 @@ MonoBehaviour:
   targetCircleDatas:
   - delay: 0
     data:
+      position: {x: -10, y: 10}
       delay: 0
       Size: 500
       perfectThreshold: 10
@@ -23,6 +24,7 @@ MonoBehaviour:
       targetSize: 100
   - delay: 1
     data:
+      position: {x: -50, y: 50}
       delay: 0
       Size: 500
       perfectThreshold: 10
@@ -31,6 +33,7 @@ MonoBehaviour:
       targetSize: 100
   - delay: 2
     data:
+      position: {x: 0, y: 0}
       delay: 0
       Size: 500
       perfectThreshold: 10
@@ -39,6 +42,7 @@ MonoBehaviour:
       targetSize: 100
   - delay: 3
     data:
+      position: {x: 0, y: 0}
       delay: 0
       Size: 500
       perfectThreshold: 10
@@ -47,6 +51,7 @@ MonoBehaviour:
       targetSize: 100
   - delay: 4
     data:
+      position: {x: 0, y: 0}
       delay: 0
       Size: 500
       perfectThreshold: 10
@@ -55,6 +60,7 @@ MonoBehaviour:
       targetSize: 100
   - delay: 5
     data:
+      position: {x: 0, y: 0}
       delay: 0
       Size: 500
       perfectThreshold: 10

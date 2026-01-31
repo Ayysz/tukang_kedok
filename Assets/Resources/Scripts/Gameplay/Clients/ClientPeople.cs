@@ -25,6 +25,7 @@ public class ClientPeople : MonoBehaviour
         {
             Debug.Log("Complete");
             dialogue.SetDialogue(data.doneDialogue, DoneEnd);
+            GameManager.Instance.AfterOkay();
         }
 
     }
@@ -57,5 +58,6 @@ public class ClientPeople : MonoBehaviour
     {
         Debug.Log("FirstMCDialogueDone");
         GameManager.Instance.UpdateTaskAtas();
+        GameManager.Instance.AfterOkay();
     }
 }

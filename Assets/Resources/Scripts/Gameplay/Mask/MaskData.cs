@@ -36,4 +36,5 @@ public enum CraftingType
     Sculpting,
     MakingHole,
     Painting,
+    Cement
 }
