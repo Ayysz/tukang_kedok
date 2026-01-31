@@ -20,7 +20,6 @@ public class MinigameCementController : MinigamePlayController
     [Header("Settings")]
     [SerializeField] private float startSize = 200f;
 
-    private float totalScore;
     private int circleLeft;
 
     public override void StartMinigame(MinigameSettingDataSO dataSetting)
@@ -39,7 +38,7 @@ public class MinigameCementController : MinigamePlayController
     }
     public void CircleDestroyed()
     {
-        totalScore += 100;
+        score += 100;
         circleLeft--;
         if (circleLeft <= 0)
         {

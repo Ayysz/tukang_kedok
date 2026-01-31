@@ -5,6 +5,7 @@ public class MaskData
 {
     public int maskID;
     public int currentProgress;
+    public int score;
     public bool isCompleted;
     public int MaxProgress()
     { 
@@ -14,7 +15,12 @@ public class MaskData
     {
         this.maskID = maskID;
         this.currentProgress = progress;
+        score = 0;
         isCompleted = false;
+    }
+    public void AddScore(int s)
+    {
+        score += s;
     }
     public MaskDataSO GetMaskDataSO()
     {

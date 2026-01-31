@@ -189,7 +189,7 @@ public class MiniGameQTEBarController : MinigamePlayController
         if (!isStopped)
         {
             // Check for input
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetMouseButtonDown(0))
             {
                 CheckSuccess();
             }
