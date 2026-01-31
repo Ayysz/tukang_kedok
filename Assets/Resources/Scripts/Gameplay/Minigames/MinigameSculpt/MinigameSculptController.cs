@@ -11,6 +11,7 @@ public class TargetCircleData
 [System.Serializable]
 public class SculptCircleData
 {
+    public Vector2 position;
     public float delay = 0;
     public float Size = 50;
     public float perfectThreshold = 5f;
@@ -106,9 +107,20 @@ public class MinigameSculptController : MinigamePlayController
     {
         yield return new WaitForSeconds(delay);
         MinigameSculptTarget target = Instantiate(prefab, parent);
-        float randomx = Random.Range(-areaX, areaX);
-        float randomy = Random.Range(-areaY, areaY);
-        target.GetComponent<RectTransform>().anchoredPosition = new Vector2(randomx, randomy);
+        float x = 0;
+        float y = 0;
+        if (tcd.data.position.x == 0 && tcd.data.position.y == 0)
+        {
+            x = Random.Range(-areaX, areaX);
+            y = Random.Range(-areaY, areaY);
+        }
+        else 
+        { 
+            x = tcd.data.position.x;
+            y = tcd.data.position.y;
+        }
+           
+        target.GetComponent<RectTransform>().anchoredPosition = new Vector2(x, y);
         target.SetAction(Fail, Perfect, Great, Good);
         target.Set(tcd.data.delay, tcd.data.shrinkingSpeed, tcd.data.Size, tcd.data.GreatThreshold, tcd.data.perfectThreshold,tcd.data.targetSize);
 

@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
 
     public List<MaskData> maskScoring = new List<MaskData>();
     public List<MinigamePlayController> minigameControllers = new List<MinigamePlayController>();
+    [SerializeField] Animator camAnimator;
 
     public bool isMainGame;
 
@@ -45,6 +46,10 @@ public class GameManager : MonoBehaviour
         taskAtasController.Show();
         ClientPeople cp = clientManager.currentClientPeople;
         taskAtasController.SetTaskLines(cp.GetMaskData().GetMaskDataSO().craftingTypes, cp.GetMaskData().currentProgress);
+    }
+    public void AfterOkay()
+    {
+        camAnimator.SetTrigger("Change");
     }
     public void HideTaskAtas()
     {
@@ -92,55 +97,56 @@ public class GameManager : MonoBehaviour
     }
     public void GoToMinigame(CraftingType craftingType)
     {
-        if (craftingType == CraftingType.Sculpting)
+        if (isMainGame)
         {
-            MaskData md = clientManager.currentClientPeople.GetMaskData();
-            MinigameSculptDataSO setting = md.GetMaskDataSO().minigameSettingDatas[md.currentProgress] as MinigameSculptDataSO;
-            minigameControllers[1].OnEndMinigame += MinigameClear;
-            ChangeCamera(CameraType.MinigameSculpt);
-            minigameControllers[1].StartMinigame(setting);
-            isMainGame = false;
+            if (craftingType == CraftingType.Sculpting)
+            {
+                isMainGame = false;
+                MaskData md = clientManager.currentClientPeople.GetMaskData();
+                MinigameSculptDataSO setting = md.GetMaskDataSO().minigameSettingDatas[md.currentProgress] as MinigameSculptDataSO;
+                minigameControllers[1].OnEndMinigame += MinigameClear;
+                minigameControllers[1].StartMinigame(setting);
 
 
+
+            }
+            else if (craftingType == CraftingType.MakingHole)
+            {
+                isMainGame = false;
+
+                MaskData md = clientManager.currentClientPeople.GetMaskData();
+                MinigameHoleSettingSO holeSetting = md.GetMaskDataSO().minigameSettingDatas[md.currentProgress] as MinigameHoleSettingSO;
+                minigameControllers[0].OnEndMinigame += MinigameClear;
+                minigameControllers[0].StartMinigame(holeSetting);
+
+
+            }
+            else if (craftingType == CraftingType.Painting)
+            {
+                isMainGame = false;
+
+                MaskData md = clientManager.currentClientPeople.GetMaskData();
+                MinigameHoleSettingSO holeSetting = md.GetMaskDataSO().minigameSettingDatas[md.currentProgress] as MinigameHoleSettingSO;
+                minigameControllers[2].OnEndMinigame += MinigameClear;
+                minigameControllers[2].StartMinigame(holeSetting);
+
+            }
+            else if (craftingType == CraftingType.Cement)
+            {
+                isMainGame = false;
+                MaskData md = clientManager.currentClientPeople.GetMaskData();
+                MinigameCementSettingSO holeSetting = md.GetMaskDataSO().minigameSettingDatas[md.currentProgress] as MinigameCementSettingSO;
+                minigameControllers[3].OnEndMinigame += MinigameClear;
+                minigameControllers[3].StartMinigame(holeSetting);
+            }
         }
-        else if (craftingType == CraftingType.MakingHole)
-        {
-
-            MaskData md = clientManager.currentClientPeople.GetMaskData();
-            MinigameHoleSettingSO holeSetting = md.GetMaskDataSO().minigameSettingDatas[md.currentProgress] as MinigameHoleSettingSO;
-            minigameControllers[0].OnEndMinigame += MinigameClear;
-            ChangeCamera(CameraType.MinigameHole);
-            minigameControllers[0].StartMinigame(holeSetting);
-            isMainGame = false;
-
-
-        }
-        else if (craftingType == CraftingType.Painting)
-        {
-            MaskData md = clientManager.currentClientPeople.GetMaskData();
-            MinigameHoleSettingSO holeSetting = md.GetMaskDataSO().minigameSettingDatas[md.currentProgress] as MinigameHoleSettingSO;
-            minigameControllers[2].OnEndMinigame += MinigameClear;
-            ChangeCamera(CameraType.MinigamePaint);
-            minigameControllers[2].StartMinigame(holeSetting);
-            isMainGame = false;
-
-        }
-        else if (craftingType == CraftingType.Cement)
-        {
-            MaskData md = clientManager.currentClientPeople.GetMaskData();
-            MinigameCementSettingSO holeSetting = md.GetMaskDataSO().minigameSettingDatas[md.currentProgress] as MinigameCementSettingSO;
-            minigameControllers[3].OnEndMinigame += MinigameClear;
-            ChangeCamera(CameraType.mainGame);
-            minigameControllers[3].StartMinigame(holeSetting);
-            isMainGame = false;
-        }
+        
     }
     public void MinigameClear()
     {
         ClientPeople cp = GameManager.Instance.clientManager.currentClientPeople;
         int curProgress = cp.GetMaskData().currentProgress;
         cp.AddProggress();
-        ChangeCamera(CameraType.mainGame);
         isMainGame = true;
     }
     public void ChangeCamera(CameraType type)
