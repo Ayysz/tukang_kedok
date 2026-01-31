@@ -11,10 +11,12 @@ public class RotateWithRightClick : MonoBehaviour
     public bool rotateZ = false;
 
     Vector3 lastMousePosition;
+    public bool isCanRotate;
 
     void Update()
     {
         // Saat klik kanan pertama kali ditekan
+        if (!isCanRotate) return;
         if (Input.GetMouseButtonDown(1))
         {
             lastMousePosition = Input.mousePosition;

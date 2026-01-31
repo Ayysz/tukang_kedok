@@ -9,6 +9,11 @@ public class ClientPeople : MonoBehaviour
 
     [SerializeField] private MaskData maskData;
     ClientData data;
+
+    public void SetDialogue(DialogueController dc)
+    {
+        dialogue = dc;
+    }
     public void SetDataFirstTime(ClientData data)
     {
         this.data = data;

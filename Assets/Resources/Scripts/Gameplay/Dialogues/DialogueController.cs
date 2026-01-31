@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class DialogueController : MonoBehaviour
@@ -12,10 +13,10 @@ public class DialogueController : MonoBehaviour
     
     public void SetDialogue(DialogueSO dialogueSO,Action action)
     {
-        dialogueBubble.gameObject.SetActive(true);
         OnEndDialogue = action;
-        currentDialogueSO = dialogueSO;
         dialogueIndex = 0;
+        currentDialogueSO = dialogueSO;
+        dialogueBubble.gameObject.SetActive(true);
         ShowDialogue(dialogueSO.lines[dialogueIndex].SpeakerName, dialogueSO.lines[dialogueIndex].Text);
     }
     public void NextDialogue()
@@ -29,19 +30,26 @@ public class DialogueController : MonoBehaviour
             }
             else
             {
-                OnEndDialogue?.Invoke();
-                OnEndDialogue = null;
                 dialogueBubble.gameObject.SetActive(false);
+                dialogueIndex = 0;
+                StartCoroutine(EndDelay());
 
             }
         }
         else { 
-            OnEndDialogue?.Invoke();
-            OnEndDialogue = null;
             dialogueBubble.gameObject.SetActive(false);
+            dialogueIndex = 0;
+            StartCoroutine(EndDelay());
+
 
         }
 
+    }
+    private IEnumerator EndDelay()
+    {
+        yield return new WaitForSeconds(0.2f);
+        OnEndDialogue?.Invoke();
+        OnEndDialogue = null;
     }
 
     public void ShowDialogue(string name, string dialogue)

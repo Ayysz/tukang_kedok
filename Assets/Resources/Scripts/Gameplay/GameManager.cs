@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     public List<MaskData> maskScoring = new List<MaskData>();
     public List<MinigamePlayController> minigameControllers = new List<MinigamePlayController>();
     [SerializeField] Animator camAnimator;
-
+    public DialogueController mainDialogue;
     public bool isMainGame;
 
     private void Awake()
@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
     public void ClientDoneAddProggress()
     {
         proggress++;
-        if (proggress >= 4)
+        if (proggress >= 3)
         {
             Debug.Log("Win Game");
         }
