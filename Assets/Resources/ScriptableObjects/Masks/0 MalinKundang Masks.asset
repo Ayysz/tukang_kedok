@@ -15,3 +15,10 @@ MonoBehaviour:
   id: 0
   maxProgress: 6
   craftingTypes: 000000000000000001000000000000000100000002000000
+  minigameSettingDatas:
+  - {fileID: 11400000, guid: e37bf06bf8f0fca43966aaa259748f05, type: 2}
+  - {fileID: 11400000, guid: e37bf06bf8f0fca43966aaa259748f05, type: 2}
+  - {fileID: 11400000, guid: a983d4497284dbe4ebb6385cf4817e52, type: 2}
+  - {fileID: 11400000, guid: e37bf06bf8f0fca43966aaa259748f05, type: 2}
+  - {fileID: 11400000, guid: a983d4497284dbe4ebb6385cf4817e52, type: 2}
+  - {fileID: 11400000, guid: a983d4497284dbe4ebb6385cf4817e52, type: 2}

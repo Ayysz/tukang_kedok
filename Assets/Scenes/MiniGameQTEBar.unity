@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 289105998}
   - component: {fileID: 289105997}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: MinigameHoleCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -813,11 +813,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0731fb2a813ec07409286b202a8041d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MiniGameQTEBarController
+  canvas: {fileID: 289105999}
+  isPlaying: 0
   PointA: {fileID: 1875221237}
   PointB: {fileID: 2142425268}
   SafeZone: {fileID: 331735562}
   ShakeCamera: {fileID: 1999576051}
-  MaxCombo: 3
+  MaxCombo: 6
   ComboText: {fileID: 170217558}
   MoveSpeed: 400
   MaxMoveSpeed: 800
@@ -825,6 +827,7 @@ MonoBehaviour:
   MinimumSafeZoneWidth: 400
   MaximumSafeZoneWidth: 200
   ReachThreshold: 0.1
+  MainCamera: {fileID: 467316583}
   camShake: {fileID: 1999576053}
   shakeOnStart: 1
   duration: 1

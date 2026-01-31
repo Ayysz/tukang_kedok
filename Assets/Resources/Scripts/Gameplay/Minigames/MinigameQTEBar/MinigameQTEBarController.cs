@@ -23,7 +23,7 @@ public class MiniGameQTEBarController : MinigamePlayController
     // Threshold used to determine if pointer "reached" a point
     [SerializeField]
     private float ReachThreshold = 0.1f;
-    private Camera MainCamera;
+    [SerializeField]private Camera MainCamera;
 
     //private float direction = 1f;
     private RectTransform pointerTransform;
@@ -55,27 +55,41 @@ public class MiniGameQTEBarController : MinigamePlayController
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    private void Start()
     {
+
+    }
+    public override void StartMinigame(MinigameSettingDataSO dataSetting)
+    {
+        base.StartMinigame(dataSetting);
+        RestartGame();
         pointerTransform = GetComponent<RectTransform>();
         targetPosition = PointB.position;
         RandomSafeZone();
         UtilizeSafeZoneWidth();
-        if (!MainCamera)
-        {
-            MainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
-        }
-        
+
         MainCamera.enabled = true;
-        ShakeCamera.enabled = false;
+       // ShakeCamera.enabled = false;
 
         if (shakeOnStart)
         {
-            StartCoroutine(PlayCameraShake());
+           // StartCoroutine(PlayCameraShake());
         }
 
         UpdateTextCombo();
     }
+    public override void SetSettings()
+    {
+        MinigameHoleSettingSO data = dataSetting as MinigameHoleSettingSO;
+        MoveSpeed = data.MoveSpeed;
+        MaxMoveSpeed = data.MaxMoveSpeed;
+        AccelerationInterval = data.AccelerationInterval;
+        MinimumSafeZoneWidth = data.MinimumSafeZoneWidth;
+        MaximumSafeZoneWidth = data.MaximumSafeZoneWidth;
+        MaxCombo = data.maxCombo;
+    }
+    
 
     public void Shake()
     {
@@ -122,6 +136,7 @@ public class MiniGameQTEBarController : MinigamePlayController
     // Update is called once per frame
     void Update()
     {
+        if (!isPlaying) return;
         if (!isStopped)
         {
             pointerTransform.position = Vector3.MoveTowards(pointerTransform.position, targetPosition, MoveSpeed * Time.deltaTime);
@@ -157,7 +172,10 @@ public class MiniGameQTEBarController : MinigamePlayController
         GetInput();
         if (CurrentCombo >= MaxCombo)
         {
+            StartCoroutine(EndGame());
+            Debug.Log("Success End");
             isStopped = true;
+            isPlaying = false;
         }
     }
 
@@ -197,6 +215,7 @@ public class MiniGameQTEBarController : MinigamePlayController
 
     void RestartGame()
     {
+        CurrentCombo = 0;
         if (isStopped)
         {
             isStopped = false;
@@ -219,11 +238,17 @@ public class MiniGameQTEBarController : MinigamePlayController
                 CurrentCombo += 1;
                 UpdateTextCombo();
             }
+      
         }
         else
         {
             ShakeTheCamera();
         }
+    }
+    public IEnumerator EndGame()
+    {
+        yield return new WaitForSeconds(1);
+        EndMinigame();
     }
 
     IEnumerator PlayCameraShake()
@@ -243,7 +268,6 @@ public class MiniGameQTEBarController : MinigamePlayController
 
         isShaking = false;
     }
-
     void ShakeTheCamera()
     {
         if (!ShakeCamera.enabled)

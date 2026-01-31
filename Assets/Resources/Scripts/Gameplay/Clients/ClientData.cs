@@ -11,4 +11,5 @@ public class ClientData : ScriptableObject
     public DialogueSO doneDialogue;
     public DialogueSO startMCDialogue;
     public MaskDataSO maskDataSO;
+   
 }

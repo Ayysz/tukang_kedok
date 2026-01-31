@@ -8,6 +8,8 @@ public class ClickDetector : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0)) // klik kiri
         {
+            if (!GameManager.Instance.isMainGame)
+                return;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
@@ -22,11 +24,12 @@ public class ClickDetector : MonoBehaviour
                     if (cp.GetMaskData().GetMaskDataSO().craftingTypes[curProgress] == toolButton.CraftingType)
                     {
                         Debug.Log("Painting Clicked, Add Proggress");
-                        cp.AddProggress();
+                        GameManager.Instance.GoToMinigame(toolButton.CraftingType);
                     }
                   
                 }
             }
         }
     }
+    
 }
