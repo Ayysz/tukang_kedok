@@ -7,6 +7,11 @@ public class MaskDisplay : MonoBehaviour
     [SerializeField] List<GameObject> progressionDisplay;
     private int curProgIndex;
 
+
+    public GameObject GetProgression(int index)
+    { 
+        return progressionDisplay[index];
+    }
     public void DisplayMask(int progress)
     {
         progressionDisplay[curProgIndex].SetActive(false);

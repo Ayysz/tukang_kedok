@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26ca868ff7333b54d90c1f627dad6341, type: 3}
   m_Name: Hole 1
   m_EditorClassIdentifier: Assembly-CSharp::MinigameHoleSettingSO
-  MoveSpeed: 200
+  maxCombo: 3
+  MoveSpeed: 500
   MaxMoveSpeed: 1000
   AccelerationInterval: 100
-  MinimumSafeZoneWidth: 50
-  MaximumSafeZoneWidth: 200
+  MinimumSafeZoneWidth: 200
+  MaximumSafeZoneWidth: 400

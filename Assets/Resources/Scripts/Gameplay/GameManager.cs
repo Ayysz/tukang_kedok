@@ -9,7 +9,8 @@ public enum CameraType
 { 
     mainGame,
     MinigameHole,
-    MinigameSculpt
+    MinigameSculpt,
+    MinigamePaint
 }
 
 public class GameManager : MonoBehaviour
@@ -118,9 +119,9 @@ public class GameManager : MonoBehaviour
         {
             MaskData md = clientManager.currentClientPeople.GetMaskData();
             MinigameHoleSettingSO holeSetting = md.GetMaskDataSO().minigameSettingDatas[md.currentProgress] as MinigameHoleSettingSO;
-            minigameControllers[0].OnEndMinigame += MinigameClear;
-            ChangeCamera(CameraType.MinigameHole);
-            minigameControllers[0].StartMinigame(holeSetting);
+            minigameControllers[2].OnEndMinigame += MinigameClear;
+            ChangeCamera(CameraType.MinigamePaint);
+            minigameControllers[2].StartMinigame(holeSetting);
             isMainGame = false;
 
         }
@@ -146,6 +147,10 @@ public class GameManager : MonoBehaviour
         else if (type == CameraType.MinigameSculpt)
         {
             cameraChangeController.ChangeCameraActive(2);
+        }
+        else if (type == CameraType.MinigamePaint)
+        {
+            cameraChangeController.ChangeCameraActive(3);
         }
     }
     

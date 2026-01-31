@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Hole 2
   m_EditorClassIdentifier: Assembly-CSharp::MinigameHoleSettingSO
   maxCombo: 5
-  MoveSpeed: 100
+  MoveSpeed: 300
   MaxMoveSpeed: 1000
   AccelerationInterval: 50
-  MinimumSafeZoneWidth: 50
-  MaximumSafeZoneWidth: 200
+  MinimumSafeZoneWidth: 200
+  MaximumSafeZoneWidth: 400
