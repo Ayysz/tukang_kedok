@@ -49,6 +49,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClientPeople
   canvas: {fileID: 4298493574499882498}
   dialogue: {fileID: 3997525555034084839}
+  maskData:
+    maskID: 0
+    currentProgress: 0
+    isCompleted: 0
 --- !u!114 &2115263136429041829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,7 +216,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5776197870663974949
 RectTransform:
   m_ObjectHideFlags: 0

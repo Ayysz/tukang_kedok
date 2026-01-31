@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 556542673263229143}
   - component: {fileID: 7746896139397401030}
   - component: {fileID: 2115263136429041829}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Malin Kundang
-  m_TagString: Untagged
+  m_TagString: WorldUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 1735334205212016548}
   m_Layer: 5
   m_Name: Next
-  m_TagString: Untagged
+  m_TagString: WorldUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -212,11 +212,11 @@ GameObject:
   - component: {fileID: 4080203232404347181}
   m_Layer: 5
   m_Name: Bubble
-  m_TagString: Untagged
+  m_TagString: WorldUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5776197870663974949
 RectTransform:
   m_ObjectHideFlags: 0
@@ -306,7 +306,7 @@ GameObject:
   - component: {fileID: 3997525555034084839}
   m_Layer: 5
   m_Name: DialogueCanvas
-  m_TagString: Untagged
+  m_TagString: WorldUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -422,7 +422,7 @@ GameObject:
   - component: {fileID: 9093649888919447808}
   m_Layer: 5
   m_Name: Nama
-  m_TagString: Untagged
+  m_TagString: WorldUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -559,7 +559,7 @@ GameObject:
   - component: {fileID: 5876356285494048631}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: WorldUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -696,7 +696,7 @@ GameObject:
   - component: {fileID: 4847825005595542166}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: WorldUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5d11e0935f0141949ba76483bc97a50e
+guid: f8c95ca063c8f1340981df41e01f5728
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,13 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Cloth
-    second: {fileID: 2100000, guid: 0324a6db0ae991b478bf61ce0ab2246c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Tables
-    second: {fileID: 2100000, guid: 52a98f27209745844aa91cbf3f774f6f, type: 2}
+      name: Sesajen
+    second: {fileID: 2100000, guid: 9bb3057cafb9afe4cb431edf7632ed43, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -101,7 +96,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.1
+    globalScale: 0.001
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
