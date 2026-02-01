@@ -35,8 +35,6 @@ public class MinigamePlayController : UIManager
     public virtual void StartMinigame(MinigameSettingDataSO dataSetting)
     {
         Show();
-        ClientPeople cp = GameManager.Instance.clientManager.currentClientPeople;
-        SpawnMask(cp.GetMaskData().GetMaskDataSO().maskDisplayPrefab, cp.GetMaskData().currentProgress);
         this.dataSetting = dataSetting;
         isPlaying = true;
         SetSettings();
@@ -56,7 +54,7 @@ public class MinigamePlayController : UIManager
         isPlaying = false;
         OnEndMinigame?.Invoke();
         OnEndMinigame = null;
-        ClearMask();
+        //ClearMask();
        
     }
     public virtual void EndMinigameScene()
@@ -66,12 +64,20 @@ public class MinigamePlayController : UIManager
     private IEnumerator EndMinigameSceneDelay()
     {
         ClearMask();
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.1f);
         ClientPeople cp = GameManager.Instance.clientManager.currentClientPeople;
         if (!cp.GetMaskData().isCompleted)
-        { 
-            SpawnMask(cp.GetMaskData().GetMaskDataSO().maskDisplayPrefab, cp.GetMaskData().currentProgress+1);
-        
+        {
+            SpawnMask(cp.GetMaskData().GetMaskDataSO().maskDisplayPrefab, cp.GetMaskData().currentProgress + 1);
+            GameManager.Instance.maskDisplay = maskDisplay;
+        }
+        else {
+            SpawnMask(cp.GetMaskData().GetMaskDataSO().maskDisplayPrefab, cp.GetMaskData().currentProgress);
+            GameManager.Instance.maskDisplay = maskDisplay;
+
+            maskAnimator.SetTrigger("Mask Done");
+            yield return new WaitForSeconds(2f);
+            ClearMask();
         }
 
     }

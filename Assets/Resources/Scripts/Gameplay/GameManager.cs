@@ -29,6 +29,9 @@ public class GameManager : MonoBehaviour
     public List<MinigamePlayController> minigameControllers = new List<MinigamePlayController>();
     [SerializeField] Animator camAnimator;
     public DialogueController mainDialogue;
+    public Animator maskAnimator;
+    public Transform maskParent;
+    public MaskDisplay maskDisplay;
     public bool isMainGame;
 
     public ToolManager toolManager;
@@ -50,9 +53,34 @@ public class GameManager : MonoBehaviour
         taskAtasController.SetTaskLines(cp.GetMaskData().GetMaskDataSO().craftingTypes, cp.GetMaskData().currentProgress);
         toolManager.SelectTool(cp.GetMaskData().GetMaskDataSO().craftingTypes[cp.GetMaskData().currentProgress]);
     }
+    public void CompletedAMask()
+    {
+        maskAnimator.SetTrigger("Mask Done");
+        camAnimator.SetTrigger("Change");
+        StartCoroutine(AfterAMaskDelat());
+     
+    }
+    private IEnumerator AfterAMaskDelat()
+    {
+        yield return new WaitForSeconds(2f);
+        foreach (Transform t in maskParent)
+        {
+            Destroy(t.gameObject);
+        }
+
+    }
     public void AfterOkay()
     {
         camAnimator.SetTrigger("Change");
+      
+
+
+    }
+    public virtual void SpawnMask(MaskDisplay display, int progress)
+    {
+        MaskDisplay md = Instantiate(display, maskParent.transform.position, maskParent.transform.rotation, maskParent);
+        md.DisplayMask(progress);
+        maskDisplay = md;
     }
     public void HideTaskAtas()
     {
@@ -151,6 +179,8 @@ public class GameManager : MonoBehaviour
         int curProgress = cp.GetMaskData().currentProgress;
         cp.AddProggress();
         isMainGame = true;
+
+        
     }
     public void ChangeCamera(CameraType type)
     {

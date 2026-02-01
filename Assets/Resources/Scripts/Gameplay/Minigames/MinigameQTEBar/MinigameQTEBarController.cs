@@ -68,6 +68,8 @@ public class MiniGameQTEBarController : MinigamePlayController
         targetPosition = PointB.position;
         RandomSafeZone();
         UtilizeSafeZoneWidth();
+        toolsAnimator.gameObject.SetActive(true);
+        toolsAnimator.SetTrigger("Cungkil Start Pahat");
 
         MainCamera.enabled = true;
        // ShakeCamera.enabled = false;
@@ -234,6 +236,8 @@ public class MiniGameQTEBarController : MinigamePlayController
         {
             if (CurrentCombo < MaxCombo)
             {
+                toolsAnimator.SetTrigger("Cungkil Pahat");
+                toolsAnimator.SetTrigger("Mask Cungkil");
                 RandomSafeZone();
                 CurrentCombo += 1;
                 UpdateTextCombo();
@@ -250,6 +254,7 @@ public class MiniGameQTEBarController : MinigamePlayController
         EndMinigameScene();
         Hide();
         yield return new WaitForSeconds(2);
+        toolsAnimator.gameObject.SetActive(false);
         EndMinigame();
     }
 

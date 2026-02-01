@@ -67,7 +67,7 @@ public class MinigameSculptController : MinigamePlayController
     {
         Debug.Log("Sculpt Win");
         isPlaying = false;
-        toolsAnimator.gameObject.SetActive(false);
+        
         EndMinigameScene();
         foreach (Transform t in parent)
         {
@@ -78,7 +78,7 @@ public class MinigameSculptController : MinigamePlayController
     public IEnumerator WinDelay()
     {
         yield return new WaitForSeconds(2f);
-     
+        toolsAnimator.gameObject.SetActive(false);
         EndMinigame();
     }
     public void Fail()
@@ -87,6 +87,8 @@ public class MinigameSculptController : MinigamePlayController
         totalScore += failScore;
         Debug.Log("Fail");
         toolsAnimator.SetTrigger("Hammer Slow");
+        maskAnimator.SetTrigger("Mask Hammer Slow");
+
     }
     public void Good()
     {
@@ -94,6 +96,7 @@ public class MinigameSculptController : MinigamePlayController
         totalScore += GoodScore;
         Debug.Log("Good");
         toolsAnimator.SetTrigger("Hammer Slow");
+        maskAnimator.SetTrigger("Mask Hammer Slow");
 
 
     }
@@ -103,7 +106,7 @@ public class MinigameSculptController : MinigamePlayController
         totalScore += GreatScore;
         Debug.Log("Great");
         toolsAnimator.SetTrigger("Hammer Slow");
-
+        maskAnimator.SetTrigger("Mask Hammer Slow");
 
     }
     public void Perfect()
@@ -112,6 +115,7 @@ public class MinigameSculptController : MinigamePlayController
         totalScore += PerfectScore;
         Debug.Log("Perfect");
         toolsAnimator.SetTrigger("Hammer Hard");
+        maskAnimator.SetTrigger("Mask Hammer Hard");
     }
     public IEnumerator SpawnTargetCircle(float delay,TargetCircleData tcd)
     {

@@ -30,8 +30,9 @@ public class ClientPeople : MonoBehaviour
         {
             Debug.Log("Complete");
             dialogue.SetDialogue(data.doneDialogue, DoneEnd);
-            GameManager.Instance.AfterOkay();
+           // GameManager.Instance.AfterOkay();
             GameManager.Instance.HideTaskAtas();
+            GameManager.Instance.CompletedAMask();
         }
         else
         {
@@ -68,5 +69,7 @@ public class ClientPeople : MonoBehaviour
         Debug.Log("FirstMCDialogueDone");
         GameManager.Instance.UpdateTaskAtas();
         GameManager.Instance.AfterOkay();
+        ClientPeople cp = GameManager.Instance.clientManager.currentClientPeople;
+        GameManager.Instance.SpawnMask(cp.GetMaskData().GetMaskDataSO().maskDisplayPrefab, cp.GetMaskData().currentProgress);
     }
 }

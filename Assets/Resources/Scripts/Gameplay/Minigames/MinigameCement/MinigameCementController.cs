@@ -40,11 +40,13 @@ public class MinigameCementController : MinigamePlayController
     {
         score += 100;
         circleLeft--;
+        toolsAnimator.SetTrigger("Cungkil Cement");
+        maskAnimator.SetTrigger("Mask Cement");
         if (circleLeft <= 0)
         {
             isPlaying = false;
             StartCoroutine(EndGame());
-            toolsAnimator.SetTrigger("Cungkil Cement");
+            
         }
     }
     public IEnumerator EndGame()
@@ -52,6 +54,7 @@ public class MinigameCementController : MinigamePlayController
         EndMinigameScene();
         Hide();
         yield return new WaitForSeconds(2);
+        toolsAnimator.gameObject.SetActive(false);
         EndMinigame();
     }
     public override void SetSettings()

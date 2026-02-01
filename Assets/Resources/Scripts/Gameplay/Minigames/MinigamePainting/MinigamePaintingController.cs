@@ -13,8 +13,14 @@ public class MinigamePaintingController : MinigamePlayController
     public override void StartMinigame(MinigameSettingDataSO dataSetting)
     {
         base.StartMinigame(dataSetting);
-        
-
+        GameObject go = GameManager.Instance.maskDisplay.GetProgression(GameManager.Instance.clientManager.currentClientPeople.GetMaskData().currentProgress);
+        sandingPainter = go.GetComponent<SandingPainter>();
+        sandingInputOld = go.GetComponent<SandingInputOld>();
+        sandingProgression = go.GetComponent<SandingProgression>();
+        RotateWithRightClick rotateWithRightClick = go.GetComponent<RotateWithRightClick>();
+        sandingInputOld.isSanding = true;
+        sandingInputOld.mainCamera = cam;
+        sandingProgression.OnFinished += Finish;
     }
     public override void EndMinigame()
     {
@@ -47,6 +53,7 @@ public class MinigamePaintingController : MinigamePlayController
     }
     public IEnumerator EndGame()
     {
+        sandingProgression.OnFinished -= Finish;
         EndMinigameScene();
         Hide();
         yield return new WaitForSeconds(2);
