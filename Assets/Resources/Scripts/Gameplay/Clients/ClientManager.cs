@@ -38,6 +38,7 @@ public class ClientManager : MonoBehaviour
     {
         OnClientPeopleOut.Invoke();
         OnClientPeopleOut = null;
+        
     }
     public void ClientStop()
     {

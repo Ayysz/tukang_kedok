@@ -18,10 +18,10 @@ MonoBehaviour:
   minigameSettingDatas:
   - {fileID: 11400000, guid: e37bf06bf8f0fca43966aaa259748f05, type: 2}
   - {fileID: 11400000, guid: f0567356b84e5d0459f91146278593b1, type: 2}
-  - {fileID: 11400000, guid: a983d4497284dbe4ebb6385cf4817e52, type: 2}
+  - {fileID: 11400000, guid: 607bcf2cc7399ab41bd96d7f6550b628, type: 2}
   - {fileID: 11400000, guid: b503305eebba61845904b0e11b076776, type: 2}
-  - {fileID: 11400000, guid: e37bf06bf8f0fca43966aaa259748f05, type: 2}
+  - {fileID: 11400000, guid: 933ccb4ac5541e046be5401b2359bf92, type: 2}
   - {fileID: 11400000, guid: a983d4497284dbe4ebb6385cf4817e52, type: 2}
   - {fileID: 11400000, guid: f0567356b84e5d0459f91146278593b1, type: 2}
-  - {fileID: 11400000, guid: b503305eebba61845904b0e11b076776, type: 2}
+  - {fileID: 11400000, guid: 267dea0e8e0c8904b89c692e0127ee76, type: 2}
   maskDisplayPrefab: {fileID: 4104699208285434490, guid: a3be919b6460fd6459d7d6fb21343e8a, type: 3}

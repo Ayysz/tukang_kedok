@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 
@@ -9,6 +10,7 @@ public class MinigamePaintingController : MinigamePlayController
     [SerializeField] private SandingInputOld sandingInputOld;
     [SerializeField] private SandingProgression sandingProgression;
     [SerializeField] private Camera cam;
+    [SerializeField] private Image icon;
 
     public override void StartMinigame(MinigameSettingDataSO dataSetting)
     {
@@ -27,6 +29,13 @@ public class MinigamePaintingController : MinigamePlayController
         base.EndMinigame();
        
     }
+    private void Update()
+    {
+        if (isPlaying)
+        { 
+            icon.transform.position = Input.mousePosition;
+        }
+    }
     public override void SpawnMask(MaskDisplay display, int progress)
     {
         base.SpawnMask(display, progress);
@@ -35,9 +44,15 @@ public class MinigamePaintingController : MinigamePlayController
         sandingInputOld = go.GetComponent<SandingInputOld>();
         sandingProgression = go.GetComponent<SandingProgression>();
         RotateWithRightClick rotateWithRightClick = go.GetComponent<RotateWithRightClick>();
-        sandingInputOld.isSanding = true;
-        sandingInputOld.mainCamera = cam;
-        sandingProgression.OnFinished += Finish;
+        if (sandingInputOld != null)
+        {
+            sandingInputOld.isSanding = true;
+            sandingInputOld.mainCamera = cam;
+        }
+        if (sandingProgression != null)
+        {
+            sandingProgression.OnFinished += Finish;
+        }
         StartCoroutine(delayMainCamera());
     }
     private IEnumerator delayMainCamera()

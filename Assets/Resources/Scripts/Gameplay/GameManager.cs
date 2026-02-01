@@ -107,6 +107,7 @@ public class GameManager : MonoBehaviour
     }
     public void ClientDone()
     {
+        starBackground.gameObject.SetActive(false);
         clientManager.ClientPeopleOut(ClientDoneAddProggress);
     }
     public void AddScore(MaskData data)

@@ -55,6 +55,9 @@ MonoBehaviour:
     score: 0
     isCompleted: 0
   walk: {fileID: 8300000, guid: b5eb0ad5295ab8443a44d8b6a3821411, type: 3}
+  objectState:
+  - {fileID: 4144072987501589778}
+  - {fileID: 4144072987501589778}
 --- !u!114 &2115263136429041829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,5 +233,10 @@ PrefabInstance:
 --- !u!4 &2975381517466447217 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8073044290507521645, guid: ea5fd2adcb9958947b52de8324806453, type: 3}
+  m_PrefabInstance: {fileID: 6432154823791711004}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4144072987501589778 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6971905197811000846, guid: ea5fd2adcb9958947b52de8324806453, type: 3}
   m_PrefabInstance: {fileID: 6432154823791711004}
   m_PrefabAsset: {fileID: 0}
