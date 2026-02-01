@@ -22,6 +22,6 @@ MonoBehaviour:
   - sizeShrinkValue: 50
     size: 500
     position: {x: 150, y: -300}
-  - sizeShrinkValue: 10
+  - sizeShrinkValue: 50
     size: 100
     position: {x: -400, y: -400}

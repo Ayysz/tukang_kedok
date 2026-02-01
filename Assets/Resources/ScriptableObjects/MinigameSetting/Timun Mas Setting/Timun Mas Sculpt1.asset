@@ -10,48 +10,48 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c69420052d1301043b3c11766785bb16, type: 3}
-  m_Name: Malin Kundang Sculpt2
+  m_Name: Timun Mas Sculpt1
   m_EditorClassIdentifier: Assembly-CSharp::MinigameSculptDataSO
   targetCircleDatas:
   - delay: 0
     data:
-      position: {x: -100, y: 0}
+      position: {x: -10, y: 10}
       delay: 0
-      Size: 400
+      Size: 500
       perfectThreshold: 10
       GreatThreshold: 15
-      shrinkingSpeed: 200
-      targetSize: 100
-  - delay: 0.5
-    data:
-      position: {x: 100, y: 0}
-      delay: 0
-      Size: 400
-      perfectThreshold: 10
-      GreatThreshold: 15
-      shrinkingSpeed: 200
+      shrinkingSpeed: 400
       targetSize: 100
   - delay: 1
     data:
-      position: {x: 300, y: 0}
+      position: {x: -100, y: 100}
       delay: 0
-      Size: 400
+      Size: 500
       perfectThreshold: 10
       GreatThreshold: 15
       shrinkingSpeed: 400
       targetSize: 100
   - delay: 2
     data:
-      position: {x: 300, y: -200}
+      position: {x: 100, y: 100}
       delay: 0
-      Size: 400
+      Size: 500
+      perfectThreshold: 10
+      GreatThreshold: 15
+      shrinkingSpeed: 400
+      targetSize: 100
+  - delay: 3
+    data:
+      position: {x: 100, y: -100}
+      delay: 0
+      Size: 500
       perfectThreshold: 10
       GreatThreshold: 15
       shrinkingSpeed: 400
       targetSize: 100
   - delay: 4
     data:
-      position: {x: 0, y: 0}
+      position: {x: 400, y: 400}
       delay: 0
       Size: 500
       perfectThreshold: 10
@@ -60,7 +60,7 @@ MonoBehaviour:
       targetSize: 100
   - delay: 5
     data:
-      position: {x: 0, y: 0}
+      position: {x: 400, y: 0}
       delay: 0
       Size: 500
       perfectThreshold: 10

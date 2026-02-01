@@ -9,9 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 640454cc7fb1efa41bac46ab5ba98ccd, type: 3}
-  m_Name: Malin Kundang End
-  m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
-  lines:
-  - SpeakerName: Malin Kundang
-    Text: Tarimo kasih bana, Uda Kedok
+  m_Script: {fileID: 11500000, guid: a2cfff266387ce240b7c3a5a88a36bcb, type: 3}
+  m_Name: Keong Mas Paint1
+  m_EditorClassIdentifier: Assembly-CSharp::MinigamePaintSettingSO

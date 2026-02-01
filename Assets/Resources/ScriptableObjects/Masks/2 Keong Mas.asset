@@ -16,10 +16,10 @@ MonoBehaviour:
   maxProgress: 6
   craftingTypes: 020000000000000001000000000000000100000000000000
   minigameSettingDatas:
-  - {fileID: 11400000, guid: f0567356b84e5d0459f91146278593b1, type: 2}
-  - {fileID: 11400000, guid: e37bf06bf8f0fca43966aaa259748f05, type: 2}
-  - {fileID: 11400000, guid: a983d4497284dbe4ebb6385cf4817e52, type: 2}
-  - {fileID: 11400000, guid: e37bf06bf8f0fca43966aaa259748f05, type: 2}
-  - {fileID: 11400000, guid: a983d4497284dbe4ebb6385cf4817e52, type: 2}
-  - {fileID: 11400000, guid: e37bf06bf8f0fca43966aaa259748f05, type: 2}
+  - {fileID: 11400000, guid: 20db150f01070c042b7a75b539aa94dc, type: 2}
+  - {fileID: 11400000, guid: e527a158d8412ac4a934dff11a3743e3, type: 2}
+  - {fileID: 11400000, guid: 30827a37c8f7bcd41823c76a65b09abb, type: 2}
+  - {fileID: 11400000, guid: 54daa02fa7b1f2e41bf0d3e534966213, type: 2}
+  - {fileID: 11400000, guid: 5be32feb946b63f469c4fa754bca39da, type: 2}
+  - {fileID: 11400000, guid: e527a158d8412ac4a934dff11a3743e3, type: 2}
   maskDisplayPrefab: {fileID: 4104699208285434490, guid: 26fb36cfea1e5bf4999af4d70d116273, type: 3}

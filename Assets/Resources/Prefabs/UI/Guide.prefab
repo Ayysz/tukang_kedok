@@ -10,13 +10,15 @@ GameObject:
   m_Component:
   - component: {fileID: 5593482808106812923}
   - component: {fileID: 7186225659297647129}
+  - component: {fileID: 1775138500317894563}
+  - component: {fileID: 9156596621163775419}
   m_Layer: 0
   m_Name: Guide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5593482808106812923
 Transform:
   m_ObjectHideFlags: 0
@@ -25,9 +27,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5024765773549294667}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18301247, y: 0.6830123, z: 0.1830128, w: 0.6830131}
+  m_LocalRotation: {x: 0.18301274, y: 0.6830127, z: 0.18301274, w: 0.6830127}
   m_LocalPosition: {x: -0.00099, y: -0.00031, z: 0.00345}
-  m_LocalScale: {x: 0.0017154294, y: 0.0017154294, z: 0.0017154294}
+  m_LocalScale: {x: 0.0008541983, y: 0.0008541981, z: 0.0008541978}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -91,3 +93,37 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1775138500317894563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5024765773549294667}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1de3e0181a9df48b2b3366ae94445c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BillboardScript
+--- !u!95 &9156596621163775419
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5024765773549294667}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 12458d43fb042434384bb1f17190417d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
