@@ -237,7 +237,7 @@ public class MiniGameQTEBarController : MinigamePlayController
             if (CurrentCombo < MaxCombo)
             {
                 toolsAnimator.SetTrigger("Cungkil Pahat");
-                toolsAnimator.SetTrigger("Mask Cungkil");
+                maskAnimator.SetTrigger("Mask Cungkil");
                 RandomSafeZone();
                 CurrentCombo += 1;
                 UpdateTextCombo();

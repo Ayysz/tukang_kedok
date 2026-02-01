@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SandingProgression
   painter: {fileID: 487435230286700971}
-  finishTarget: 0.1
+  finishTarget: 0.08
 --- !u!114 &487435230286700971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1025,8 +1025,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SandingPainter
   targetRenderer: {fileID: 2525285667232913755}
   textureSize: 1024
-  brushSize: 20
-  brushStrength: 0.05
+  brushSize: 60
+  brushStrength: 1
 --- !u!114 &6398876969170307999
 MonoBehaviour:
   m_ObjectHideFlags: 0
