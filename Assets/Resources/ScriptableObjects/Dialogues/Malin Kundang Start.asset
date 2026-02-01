@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Malin Kundang Start
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
   lines:
-  - SpeakerName: Malin Kundang
-    Text: Deskripsi Deskripsi 1
-  - SpeakerName: Malin Kundang
-    Text: Deskripsi Deskripsi 2
+  - SpeakerName: Ibu Malin
+    Text: Uda, tolongin anak saya
+  - SpeakerName: Ibu Malin
+    Text: Asbun saya dikabulkan yang maha kuasa dan sekarang anak saya menjadi batu
+  - SpeakerName: Ibu Malin
+    Text: Tolong kami, Uda. Saya yakin anak saya sudah jera akan kesalahannya
+  - SpeakerName: Kang Kedok
+    Text: Baik, mohon tunggu sebentar ya, bu
