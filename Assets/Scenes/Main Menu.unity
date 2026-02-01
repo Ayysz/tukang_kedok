@@ -450,7 +450,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Cornelius Nathanael \n3D Artist, Technical Artist, 2D Animator\nSherina-
+  m_text: "Cornelius Nathanael \n3D Artist, Technical Artist, Animator\nSherina-
     Writter, 2D Aritst\nGirado Tulus - Programmer\nAmmar Ayyis - Programmer\nNuurin
     Aulia - 2D Artist\nLaura Meidiana - 3D Artist"
   m_isRightToLeft: 0
@@ -2206,7 +2206,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1837912447
 MonoBehaviour:
   m_ObjectHideFlags: 0
