@@ -10,17 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 640454cc7fb1efa41bac46ab5ba98ccd, type: 3}
-  m_Name: Timun Mas Start
+  m_Name: Keong Mas End
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
   lines:
-  - SpeakerName: Timun Mas
-    Text: Mas! Mas Kedok! Tulung aku!!
-  - SpeakerName: Kang Kedok
-    Text: opo wi?
-  - SpeakerName: Timun Mas
-    Text: Kuwi Buto Ijo ngejar aku, wis kabeh jurus tak keluarin tapi masih aja.
-      Tulung yo mas, bantu aku!
-  - SpeakerName: Kang Kedok
-    Text: Ohh iya, sek yo ndhuk
-  - SpeakerName: Timun Mas
-    Text: Cepat! Ojo kesuwen mas!
+  - SpeakerName: Keong Mas
+    Text: Matur nuwun, mas Kedok!

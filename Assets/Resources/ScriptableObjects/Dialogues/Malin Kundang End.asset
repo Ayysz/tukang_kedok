@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Malin Kundang End
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
   lines:
-  - SpeakerName: Malin Kundang
-    Text: Terimakasih!
+  - SpeakerName: Ibu Malin
+    Text: Tarimo kasih bana, Uda Kedok
