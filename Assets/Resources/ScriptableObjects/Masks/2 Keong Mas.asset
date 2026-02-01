@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: 2 Keong Mas
   m_EditorClassIdentifier: Assembly-CSharp::MaskDataSO
   id: 2
-  maxProgress: 8
-  craftingTypes: 0000000001000000020000000000000000000000000000000000000001000000
+  maxProgress: 6
+  craftingTypes: 020000000000000001000000000000000100000000000000
   minigameSettingDatas:
-  - {fileID: 11400000, guid: 607bcf2cc7399ab41bd96d7f6550b628, type: 2}
+  - {fileID: 11400000, guid: f0567356b84e5d0459f91146278593b1, type: 2}
+  - {fileID: 11400000, guid: e37bf06bf8f0fca43966aaa259748f05, type: 2}
   - {fileID: 11400000, guid: a983d4497284dbe4ebb6385cf4817e52, type: 2}
+  - {fileID: 11400000, guid: e37bf06bf8f0fca43966aaa259748f05, type: 2}
   - {fileID: 11400000, guid: a983d4497284dbe4ebb6385cf4817e52, type: 2}
-  - {fileID: 11400000, guid: 607bcf2cc7399ab41bd96d7f6550b628, type: 2}
-  - {fileID: 11400000, guid: a983d4497284dbe4ebb6385cf4817e52, type: 2}
-  - {fileID: 11400000, guid: a983d4497284dbe4ebb6385cf4817e52, type: 2}
-  maskDisplayPrefab: {fileID: 0}
+  - {fileID: 11400000, guid: e37bf06bf8f0fca43966aaa259748f05, type: 2}
+  maskDisplayPrefab: {fileID: 4104699208285434490, guid: 26fb36cfea1e5bf4999af4d70d116273, type: 3}
