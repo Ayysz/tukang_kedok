@@ -52,7 +52,9 @@ MonoBehaviour:
   maskData:
     maskID: 0
     currentProgress: 0
+    score: 0
     isCompleted: 0
+  walk: {fileID: 8300000, guid: b5eb0ad5295ab8443a44d8b6a3821411, type: 3}
 --- !u!114 &2115263136429041829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,6 +411,7 @@ MonoBehaviour:
   dialogueBubble: {fileID: 4080203232404347181}
   dialogueIndex: 0
   currentDialogueSO: {fileID: 0}
+  next: {fileID: 0}
 --- !u!1 &4631166238332783752
 GameObject:
   m_ObjectHideFlags: 0

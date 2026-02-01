@@ -8,6 +8,8 @@ public class ClientPeople : MonoBehaviour
     [SerializeField] private DialogueController dialogue;
 
     [SerializeField] private MaskData maskData;
+
+    [SerializeField] private AudioClip walk;
     ClientData data;
 
     public void SetDialogue(DialogueController dc)
@@ -17,6 +19,7 @@ public class ClientPeople : MonoBehaviour
     public void SetDataFirstTime(ClientData data)
     {
         this.data = data;
+        AudioManager.Instance.PlaySfx(walk);
     }
     public void StartClient()
     {

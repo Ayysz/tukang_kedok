@@ -36,6 +36,9 @@ public class MinigameSculptController : MinigamePlayController
     private int curCircleCount;
     [SerializeField]private float totalScore = 0;
 
+    [SerializeField] private AudioClip pop;
+    [SerializeField] private AudioClip popFail;
+
 
     public override void StartMinigame(MinigameSettingDataSO dataSetting)
     {
@@ -83,6 +86,7 @@ public class MinigameSculptController : MinigamePlayController
     }
     public void Fail()
     {
+        AudioManager.Instance.PlaySfx(popFail);
         AddCircleCount();
         totalScore += failScore;
         Debug.Log("Fail");
@@ -92,6 +96,7 @@ public class MinigameSculptController : MinigamePlayController
     }
     public void Good()
     {
+        AudioManager.Instance.PlaySfx(popFail);
         AddCircleCount();
         totalScore += GoodScore;
         Debug.Log("Good");
@@ -102,6 +107,7 @@ public class MinigameSculptController : MinigamePlayController
     }
     public void Great()
     {
+        AudioManager.Instance.PlaySfx(pop);
         AddCircleCount();
         totalScore += GreatScore;
         Debug.Log("Great");
@@ -111,6 +117,7 @@ public class MinigameSculptController : MinigamePlayController
     }
     public void Perfect()
     {
+        AudioManager.Instance.PlaySfx(pop);
         AddCircleCount();
         totalScore += PerfectScore;
         Debug.Log("Perfect");

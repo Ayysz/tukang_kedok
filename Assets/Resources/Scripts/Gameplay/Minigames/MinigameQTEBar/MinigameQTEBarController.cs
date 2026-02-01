@@ -53,6 +53,8 @@ public class MiniGameQTEBarController : MinigamePlayController
     float CurrentCombo = 0;
     bool isShaking = false;
 
+    [SerializeField] private AudioClip sfx;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
@@ -241,6 +243,7 @@ public class MiniGameQTEBarController : MinigamePlayController
                 RandomSafeZone();
                 CurrentCombo += 1;
                 UpdateTextCombo();
+                AudioManager.Instance.PlaySfx(sfx);
             }
       
         }

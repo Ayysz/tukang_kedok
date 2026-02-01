@@ -1249,6 +1249,7 @@ MonoBehaviour:
   dialogueBubble: {fileID: 647968505}
   dialogueIndex: 0
   currentDialogueSO: {fileID: 0}
+  next: {fileID: 8300000, guid: 9693936b95ee6484f8e16b09a1f1c91b, type: 3}
 --- !u!1 &271088440 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5024765773549294667, guid: 8d4f62f122a75994e92e38de884d1311, type: 3}
@@ -1735,6 +1736,8 @@ MonoBehaviour:
   failScore: 1
   circleCount: 0
   totalScore: 0
+  pop: {fileID: 8300000, guid: 220a2a7d3fb287f42a818b9eeff59ee9, type: 3}
+  popFail: {fileID: 8300000, guid: 2ea1bcf67a6964043b702373882f7468, type: 3}
 --- !u!1 &345598207
 GameObject:
   m_ObjectHideFlags: 0
@@ -4738,6 +4741,7 @@ MonoBehaviour:
   dialogueBubble: {fileID: 11333661}
   dialogueIndex: 0
   currentDialogueSO: {fileID: 0}
+  next: {fileID: 0}
 --- !u!1 &1009793220
 GameObject:
   m_ObjectHideFlags: 0
@@ -7391,6 +7395,7 @@ MonoBehaviour:
   falloff: 0
   minFalloffDist: 20
   maxFalloffDist: 70
+  sfx: {fileID: 8300000, guid: 3fe3d08921e6ff041adf5b45029f468a, type: 3}
 --- !u!114 &1577954548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9268,7 +9273,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 7dca9ea897790274092ce5e437ac3163, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

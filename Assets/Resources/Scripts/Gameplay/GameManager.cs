@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public enum CameraType
@@ -115,12 +116,18 @@ public class GameManager : MonoBehaviour
         if (proggress >= 3)
         {
             Debug.Log("Win Game");
+            StartCoroutine(WinDelay());
         }
         else {
             clientManager.DestroyCurrentPeople();
             CurrentClientData = ClientDatabase.Instance.GetClient(proggress);
             clientManager.SpawnClientPeople(CurrentClientData);
         }
+    }
+    private IEnumerator WinDelay()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("Main Menu");
     }
     public void SetPlayerDialogue(DialogueSO dialogue,Action action)
     {
