@@ -11,7 +11,6 @@ public class ClientPeople : MonoBehaviour
 
     [SerializeField] private AudioClip walk;
     [SerializeField] private GameObject[] objectState;
-    [SerializeField] private GameObject PopOut;
     ClientData data;
 
     public void SetDialogue(DialogueController dc)
@@ -54,13 +53,6 @@ public class ClientPeople : MonoBehaviour
     {
         objectState[1].SetActive(true);
         objectState[0].SetActive(false);
-        PopOut.gameObject.SetActive(true);
-        PopOut.transform.localScale = new Vector3(0, 0, 0);
-        PopOut.transform.DOScale(new Vector3(0.2965013f, 0.2965013f, 0.2965013f), 1f).SetEase(Ease.OutBack);
-    }
-    public void HidePopout()
-    {
-        PopOut.gameObject.SetActive(false);
     }
     public MaskData GetMaskData()
     {

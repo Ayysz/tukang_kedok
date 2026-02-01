@@ -59,7 +59,10 @@ public class MinigamePaintingController : MinigamePlayController
     {
         yield return new WaitForSeconds(0.5f);
         Debug.Log("Set MainCamera");
-        sandingInputOld.mainCamera = cam;
+        if (sandingInputOld != null)
+        {
+            sandingInputOld.mainCamera = cam;
+        }
     }
     public void Finish()
     {
