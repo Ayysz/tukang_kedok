@@ -53,6 +53,8 @@ public class MiniGameQTEBarController : MinigamePlayController
     float CurrentCombo = 0;
     bool isShaking = false;
 
+    [SerializeField] private AudioClip sfx;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
@@ -68,6 +70,8 @@ public class MiniGameQTEBarController : MinigamePlayController
         targetPosition = PointB.position;
         RandomSafeZone();
         UtilizeSafeZoneWidth();
+        toolsAnimator.gameObject.SetActive(true);
+        toolsAnimator.SetTrigger("Cungkil Start Pahat");
 
         MainCamera.enabled = true;
        // ShakeCamera.enabled = false;
@@ -234,9 +238,12 @@ public class MiniGameQTEBarController : MinigamePlayController
         {
             if (CurrentCombo < MaxCombo)
             {
+                toolsAnimator.SetTrigger("Cungkil Pahat");
+                maskAnimator.SetTrigger("Mask Cungkil");
                 RandomSafeZone();
                 CurrentCombo += 1;
                 UpdateTextCombo();
+                AudioManager.Instance.PlaySfx(sfx);
             }
       
         }
@@ -250,6 +257,7 @@ public class MiniGameQTEBarController : MinigamePlayController
         EndMinigameScene();
         Hide();
         yield return new WaitForSeconds(2);
+        toolsAnimator.gameObject.SetActive(false);
         EndMinigame();
     }
 

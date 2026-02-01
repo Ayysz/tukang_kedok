@@ -8,6 +8,8 @@ public class DialogueController : MonoBehaviour
     [SerializeField] private int dialogueIndex;
     [SerializeField] private DialogueSO currentDialogueSO;
 
+    [SerializeField] private AudioClip next;
+
     public Action OnEndDialogue;
 
     
@@ -23,6 +25,7 @@ public class DialogueController : MonoBehaviour
     {
         if (dialogueIndex < currentDialogueSO.lines.Count)
         {
+            AudioManager.Instance.PlaySfx(next);
             dialogueIndex++;
             if (dialogueIndex < currentDialogueSO.lines.Count)
             {
@@ -36,7 +39,9 @@ public class DialogueController : MonoBehaviour
 
             }
         }
-        else { 
+        else {
+            AudioManager.Instance.PlaySfx(next);
+
             dialogueBubble.gameObject.SetActive(false);
             dialogueIndex = 0;
             StartCoroutine(EndDelay());

@@ -14,7 +14,7 @@ public class SandingInputOld : MonoBehaviour
     void Update()
     {
         // Klik kiri mouse ditahan
-        if (!isSanding) return;
+        if (!isSanding || GameManager.Instance.isMainGame) return;
         
         if (Input.GetMouseButton(0))
         {

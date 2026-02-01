@@ -36,6 +36,9 @@ public class MinigameSculptController : MinigamePlayController
     private int curCircleCount;
     [SerializeField]private float totalScore = 0;
 
+    [SerializeField] private AudioClip pop;
+    [SerializeField] private AudioClip popFail;
+
 
     public override void StartMinigame(MinigameSettingDataSO dataSetting)
     {
@@ -67,7 +70,7 @@ public class MinigameSculptController : MinigamePlayController
     {
         Debug.Log("Sculpt Win");
         isPlaying = false;
-        toolsAnimator.gameObject.SetActive(false);
+        
         EndMinigameScene();
         foreach (Transform t in parent)
         {
@@ -78,40 +81,48 @@ public class MinigameSculptController : MinigamePlayController
     public IEnumerator WinDelay()
     {
         yield return new WaitForSeconds(2f);
-     
+        toolsAnimator.gameObject.SetActive(false);
         EndMinigame();
     }
     public void Fail()
     {
+        AudioManager.Instance.PlaySfx(popFail);
         AddCircleCount();
         totalScore += failScore;
         Debug.Log("Fail");
         toolsAnimator.SetTrigger("Hammer Slow");
+        maskAnimator.SetTrigger("Mask Hammer Slow");
+
     }
     public void Good()
     {
+        AudioManager.Instance.PlaySfx(popFail);
         AddCircleCount();
         totalScore += GoodScore;
         Debug.Log("Good");
         toolsAnimator.SetTrigger("Hammer Slow");
+        maskAnimator.SetTrigger("Mask Hammer Slow");
 
 
     }
     public void Great()
     {
+        AudioManager.Instance.PlaySfx(pop);
         AddCircleCount();
         totalScore += GreatScore;
         Debug.Log("Great");
         toolsAnimator.SetTrigger("Hammer Slow");
-
+        maskAnimator.SetTrigger("Mask Hammer Slow");
 
     }
     public void Perfect()
     {
+        AudioManager.Instance.PlaySfx(pop);
         AddCircleCount();
         totalScore += PerfectScore;
         Debug.Log("Perfect");
         toolsAnimator.SetTrigger("Hammer Hard");
+        maskAnimator.SetTrigger("Mask Hammer Hard");
     }
     public IEnumerator SpawnTargetCircle(float delay,TargetCircleData tcd)
     {

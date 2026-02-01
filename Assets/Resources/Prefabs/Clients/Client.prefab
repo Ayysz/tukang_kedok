@@ -45,6 +45,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fad8aff668a4a4347b8b660ae43e6f9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClientPeople
+  canvas: {fileID: 0}
+  dialogue: {fileID: 0}
+  maskData:
+    maskID: 0
+    currentProgress: 0
+    score: 0
+    isCompleted: 0
+  walk: {fileID: 8300000, guid: b5eb0ad5295ab8443a44d8b6a3821411, type: 3}
 --- !u!1 &7445190458457302526
 GameObject:
   m_ObjectHideFlags: 0

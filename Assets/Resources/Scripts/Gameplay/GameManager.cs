@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public enum CameraType
@@ -29,9 +30,13 @@ public class GameManager : MonoBehaviour
     public List<MinigamePlayController> minigameControllers = new List<MinigamePlayController>();
     [SerializeField] Animator camAnimator;
     public DialogueController mainDialogue;
+    public Animator maskAnimator;
+    public Transform maskParent;
+    public MaskDisplay maskDisplay;
     public bool isMainGame;
 
     public ToolManager toolManager;
+    public GameObject starBackground;
 
     private void Awake()
     {
@@ -50,9 +55,36 @@ public class GameManager : MonoBehaviour
         taskAtasController.SetTaskLines(cp.GetMaskData().GetMaskDataSO().craftingTypes, cp.GetMaskData().currentProgress);
         toolManager.SelectTool(cp.GetMaskData().GetMaskDataSO().craftingTypes[cp.GetMaskData().currentProgress]);
     }
+    public void CompletedAMask()
+    {
+        clientManager.currentClientPeople.State2();
+        starBackground.gameObject.SetActive(true);
+        maskAnimator.SetTrigger("Mask Done");
+        camAnimator.SetTrigger("Change");
+        StartCoroutine(AfterAMaskDelat());
+     
+    }
+    private IEnumerator AfterAMaskDelat()
+    {
+        yield return new WaitForSeconds(2f);
+        foreach (Transform t in maskParent)
+        {
+            Destroy(t.gameObject);
+        }
+
+    }
     public void AfterOkay()
     {
         camAnimator.SetTrigger("Change");
+      
+
+
+    }
+    public virtual void SpawnMask(MaskDisplay display, int progress)
+    {
+        MaskDisplay md = Instantiate(display, maskParent.transform.position, maskParent.transform.rotation, maskParent);
+        md.DisplayMask(progress);
+        maskDisplay = md;
     }
     public void HideTaskAtas()
     {
@@ -75,6 +107,7 @@ public class GameManager : MonoBehaviour
     }
     public void ClientDone()
     {
+        starBackground.gameObject.SetActive(false);
         clientManager.ClientPeopleOut(ClientDoneAddProggress);
     }
     public void AddScore(MaskData data)
@@ -87,12 +120,18 @@ public class GameManager : MonoBehaviour
         if (proggress >= 3)
         {
             Debug.Log("Win Game");
+            StartCoroutine(WinDelay());
         }
         else {
             clientManager.DestroyCurrentPeople();
             CurrentClientData = ClientDatabase.Instance.GetClient(proggress);
             clientManager.SpawnClientPeople(CurrentClientData);
         }
+    }
+    private IEnumerator WinDelay()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("Main Menu");
     }
     public void SetPlayerDialogue(DialogueSO dialogue,Action action)
     {
@@ -151,6 +190,8 @@ public class GameManager : MonoBehaviour
         int curProgress = cp.GetMaskData().currentProgress;
         cp.AddProggress();
         isMainGame = true;
+
+        
     }
     public void ChangeCamera(CameraType type)
     {

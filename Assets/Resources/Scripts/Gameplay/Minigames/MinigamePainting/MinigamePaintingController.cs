@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 
@@ -9,17 +10,31 @@ public class MinigamePaintingController : MinigamePlayController
     [SerializeField] private SandingInputOld sandingInputOld;
     [SerializeField] private SandingProgression sandingProgression;
     [SerializeField] private Camera cam;
+    [SerializeField] private Image icon;
 
     public override void StartMinigame(MinigameSettingDataSO dataSetting)
     {
         base.StartMinigame(dataSetting);
-        
-
+        GameObject go = GameManager.Instance.maskDisplay.GetProgression(GameManager.Instance.clientManager.currentClientPeople.GetMaskData().currentProgress);
+        sandingPainter = go.GetComponent<SandingPainter>();
+        sandingInputOld = go.GetComponent<SandingInputOld>();
+        sandingProgression = go.GetComponent<SandingProgression>();
+        RotateWithRightClick rotateWithRightClick = go.GetComponent<RotateWithRightClick>();
+        sandingInputOld.isSanding = true;
+        sandingInputOld.mainCamera = cam;
+        sandingProgression.OnFinished += Finish;
     }
     public override void EndMinigame()
     {
         base.EndMinigame();
        
+    }
+    private void Update()
+    {
+        if (isPlaying)
+        { 
+            icon.transform.position = Input.mousePosition;
+        }
     }
     public override void SpawnMask(MaskDisplay display, int progress)
     {
@@ -29,9 +44,15 @@ public class MinigamePaintingController : MinigamePlayController
         sandingInputOld = go.GetComponent<SandingInputOld>();
         sandingProgression = go.GetComponent<SandingProgression>();
         RotateWithRightClick rotateWithRightClick = go.GetComponent<RotateWithRightClick>();
-        sandingInputOld.isSanding = true;
-        sandingInputOld.mainCamera = cam;
-        sandingProgression.OnFinished += Finish;
+        if (sandingInputOld != null)
+        {
+            sandingInputOld.isSanding = true;
+            sandingInputOld.mainCamera = cam;
+        }
+        if (sandingProgression != null)
+        {
+            sandingProgression.OnFinished += Finish;
+        }
         StartCoroutine(delayMainCamera());
     }
     private IEnumerator delayMainCamera()
@@ -47,6 +68,7 @@ public class MinigamePaintingController : MinigamePlayController
     }
     public IEnumerator EndGame()
     {
+        sandingProgression.OnFinished -= Finish;
         EndMinigameScene();
         Hide();
         yield return new WaitForSeconds(2);
