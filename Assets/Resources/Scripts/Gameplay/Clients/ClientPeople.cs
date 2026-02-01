@@ -10,6 +10,7 @@ public class ClientPeople : MonoBehaviour
     [SerializeField] private MaskData maskData;
 
     [SerializeField] private AudioClip walk;
+    [SerializeField] private GameObject[] objectState;
     ClientData data;
 
     public void SetDialogue(DialogueController dc)
@@ -20,6 +21,7 @@ public class ClientPeople : MonoBehaviour
     {
         this.data = data;
         AudioManager.Instance.PlaySfx(walk);
+        State1();
     }
     public void StartClient()
     {
@@ -42,6 +44,16 @@ public class ClientPeople : MonoBehaviour
             GameManager.Instance.UpdateTaskAtas();
         }
     }
+    public void State1()
+    {
+        objectState[0].SetActive(true);
+        objectState[1].SetActive(false);
+    }
+    public void State2()
+    {
+        objectState[1].SetActive(true);
+        objectState[2].SetActive(false);
+    }
     public MaskData GetMaskData()
     {
         return maskData;
@@ -59,6 +71,7 @@ public class ClientPeople : MonoBehaviour
         // Animasi Idle
         //GameManager.Instance.ClientDone();
         GameManager.Instance.AddScore(maskData);
+        GameManager.Instance.starBackground.gameObject.SetActive(false);
         StartCoroutine(DoneEndDelay());
     }
     private IEnumerator DoneEndDelay()

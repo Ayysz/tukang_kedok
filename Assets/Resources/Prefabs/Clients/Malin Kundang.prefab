@@ -56,6 +56,9 @@ MonoBehaviour:
     score: 0
     isCompleted: 0
   walk: {fileID: 8300000, guid: b5eb0ad5295ab8443a44d8b6a3821411, type: 3}
+  objectState:
+  - {fileID: 3968209498464298515}
+  - {fileID: 9037831461833868879}
 --- !u!114 &2115263136429041829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,6 +236,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4290768035259578680, guid: 3e73ce8f35bac7141bd0f2b0e9e3db9c, type: 3}
   m_PrefabInstance: {fileID: 2040744829003990856}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3968209498464298515 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3117554306244682075, guid: 3e73ce8f35bac7141bd0f2b0e9e3db9c, type: 3}
+  m_PrefabInstance: {fileID: 2040744829003990856}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7469750643799390308
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -305,5 +313,10 @@ PrefabInstance:
 --- !u!4 &7900661750532300332 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 724279795597583944, guid: 83bbe07fac69b2747a8694e2b7f467bd, type: 3}
+  m_PrefabInstance: {fileID: 7469750643799390308}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9037831461833868879 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1929002398980603435, guid: 83bbe07fac69b2747a8694e2b7f467bd, type: 3}
   m_PrefabInstance: {fileID: 7469750643799390308}
   m_PrefabAsset: {fileID: 0}

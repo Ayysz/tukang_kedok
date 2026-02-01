@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     public bool isMainGame;
 
     public ToolManager toolManager;
+    public GameObject starBackground;
 
     private void Awake()
     {
@@ -56,6 +57,8 @@ public class GameManager : MonoBehaviour
     }
     public void CompletedAMask()
     {
+        clientManager.currentClientPeople.State2();
+        starBackground.gameObject.SetActive(true);
         maskAnimator.SetTrigger("Mask Done");
         camAnimator.SetTrigger("Change");
         StartCoroutine(AfterAMaskDelat());
