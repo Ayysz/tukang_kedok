@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: MC Dialogue 1
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
   lines:
-  - SpeakerName: 
+  - SpeakerName: Kedok
     Text: Baik, mohon tunggu sebentar ya, bu.
