@@ -35,6 +35,11 @@ public class MinigameCementController : MinigamePlayController
             cementCircle.SetData(cementCircleList[i].size, cementCircleList[i].sizeShrinkValue,CircleDestroyed);
             cementCircle.GetComponent<RectTransform>().anchoredPosition = cementCircleList[i].position;
         }
+        if (isSkip)
+        {
+            isPlaying = false;
+            EndGame();
+        }
     }
     public void CircleDestroyed()
     {

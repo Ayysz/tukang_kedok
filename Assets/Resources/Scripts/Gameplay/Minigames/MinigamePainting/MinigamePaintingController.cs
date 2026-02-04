@@ -12,6 +12,8 @@ public class MinigamePaintingController : MinigamePlayController
     [SerializeField] private Camera cam;
     [SerializeField] private Image icon;
 
+
+
     public override void StartMinigame(MinigameSettingDataSO dataSetting)
     {
         base.StartMinigame(dataSetting);
@@ -20,9 +22,20 @@ public class MinigamePaintingController : MinigamePlayController
         sandingInputOld = go.GetComponent<SandingInputOld>();
         sandingProgression = go.GetComponent<SandingProgression>();
         RotateWithRightClick rotateWithRightClick = go.GetComponent<RotateWithRightClick>();
-        sandingInputOld.isSanding = true;
-        sandingInputOld.mainCamera = cam;
-        sandingProgression.OnFinished += Finish;
+        if (sandingInputOld != null)
+        {
+            sandingInputOld.isSanding = true;
+            sandingInputOld.mainCamera = cam;
+        }
+        if (sandingProgression != null)
+        {
+            sandingProgression.OnFinished += Finish;
+        }
+        if (isSkip)
+        {
+            isPlaying = false;
+            Finish();
+        }
     }
     public override void EndMinigame()
     {

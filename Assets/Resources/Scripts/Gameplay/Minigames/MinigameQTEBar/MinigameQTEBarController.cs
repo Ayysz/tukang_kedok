@@ -82,6 +82,12 @@ public class MiniGameQTEBarController : MinigamePlayController
         }
 
         UpdateTextCombo();
+        if (isSkip)
+
+        {
+
+            EndGame();
+        }
     }
     public override void SetSettings()
     {

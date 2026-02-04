@@ -15,6 +15,7 @@ public class MinigamePlayController : UIManager
     public Animator maskAnimator;
 
     public int score;
+    public bool isSkip;
     public MaskDisplay GetMaskDisplay()
     {
         return maskDisplay;

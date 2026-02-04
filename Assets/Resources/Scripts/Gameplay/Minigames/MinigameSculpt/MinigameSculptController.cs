@@ -40,6 +40,8 @@ public class MinigameSculptController : MinigamePlayController
     [SerializeField] private AudioClip popFail;
 
 
+
+
     public override void StartMinigame(MinigameSettingDataSO dataSetting)
     {
         base.StartMinigame(dataSetting);
@@ -52,6 +54,11 @@ public class MinigameSculptController : MinigamePlayController
         for (int i = 0; i < targetCircleDatas.Count; i++)
         {
             StartCoroutine(SpawnTargetCircle(targetCircleDatas[i].delay, targetCircleDatas[i]));
+        }
+        if (isSkip)
+        {
+            isPlaying = false;
+            WinGame();
         }
 
     }
