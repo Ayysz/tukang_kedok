@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -95,3 +95,5 @@ MonoBehaviour:
   circleGreatThreshold: 0
   targetSize: 0
   circlePrefab: {fileID: 5268531159917237838, guid: 52c83c739c6daaa439fd5fabb48f6197, type: 3}
+  rectTransform: {fileID: 529480074165257665}
+  measureImage: {fileID: 5616308311260908629}

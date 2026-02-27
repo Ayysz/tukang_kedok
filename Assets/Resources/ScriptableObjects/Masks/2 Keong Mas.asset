@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MaskDataSO
   id: 2
   maxProgress: 6
+  maskName: Keong Mas
   craftingTypes: 020000000000000001000000000000000100000000000000
   minigameSettingDatas:
   - {fileID: 11400000, guid: 20db150f01070c042b7a75b539aa94dc, type: 2}

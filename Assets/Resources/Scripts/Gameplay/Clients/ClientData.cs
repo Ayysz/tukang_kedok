@@ -11,5 +11,7 @@ public class ClientData : ScriptableObject
     public DialogueSO doneDialogue;
     public DialogueSO startMCDialogue;
     public MaskDataSO maskDataSO;
+    public AudioClip[] firstEnterClip;
+    public AudioClip[] doneClip;
    
 }

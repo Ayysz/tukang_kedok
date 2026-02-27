@@ -150,3 +150,4 @@ MonoBehaviour:
   startSize: 0
   curSize: 0
   sizeShrinkValue: 0
+  clip: {fileID: 8300000, guid: bdce07315ab49124395ece58768900e9, type: 3}

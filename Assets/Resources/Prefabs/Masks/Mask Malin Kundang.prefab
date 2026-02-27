@@ -101,6 +101,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isSanding: 1
+  amplasSound: {fileID: 8300000, guid: f415a27956ab3c74c901dea80f3e09d4, type: 3}
+  soundDelay: 1
 --- !u!1 &384350938320856467
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,6 +230,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isSanding: 1
+  amplasSound: {fileID: 0}
+  soundDelay: 1
 --- !u!114 &5912766390150187419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1185,6 +1189,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isSanding: 1
+  amplasSound: {fileID: 8300000, guid: f415a27956ab3c74c901dea80f3e09d4, type: 3}
+  soundDelay: 1
 --- !u!64 &3124630523266691881
 MeshCollider:
   m_ObjectHideFlags: 0

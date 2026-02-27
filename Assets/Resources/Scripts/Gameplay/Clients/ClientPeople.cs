@@ -23,6 +23,10 @@ public class ClientPeople : MonoBehaviour
         AudioManager.Instance.PlaySfx(walk);
         State1();
     }
+    public ClientData GetData()
+    {
+        return data;
+    }
     public void StartClient()
     {
         dialogue.SetDialogue(data.startDialogue,DoneStart);
@@ -34,10 +38,19 @@ public class ClientPeople : MonoBehaviour
         if (maskData.isCompleted)
         {
             Debug.Log("Complete");
-            dialogue.SetDialogue(data.doneDialogue, DoneEnd);
-           // GameManager.Instance.AfterOkay();
-            GameManager.Instance.HideTaskAtas();
-            GameManager.Instance.CompletedAMask();
+            if (data.doneClip.Length > 0)
+            {
+                for (int i = 0; i < data.doneClip.Length; i++)
+                {
+                    AudioManager.Instance.PlaySfx(data.doneClip[i]);
+                }
+            }
+            GameManager.Instance.CompletedAMask(()=> {
+                dialogue.SetDialogue(data.doneDialogue, DoneEnd);
+                // GameManager.Instance.AfterOkay();
+                GameManager.Instance.HideTaskAtas();
+                GameManager.Instance.CameraChange();
+            });
         }
         else
         {
@@ -71,7 +84,8 @@ public class ClientPeople : MonoBehaviour
         // Animasi Idle
         //GameManager.Instance.ClientDone();
         GameManager.Instance.AddScore(maskData);
-       
+     
+        
         StartCoroutine(DoneEndDelay());
     }
     private IEnumerator DoneEndDelay()

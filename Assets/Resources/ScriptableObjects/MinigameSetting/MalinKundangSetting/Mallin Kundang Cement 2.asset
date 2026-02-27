@@ -25,3 +25,10 @@ MonoBehaviour:
   - sizeShrinkValue: 50
     size: 100
     position: {x: -400, y: -400}
+  perfectScore: 100
+  greatScore: 75
+  goodScore: 35
+  badScore: 20
+  perfectTime: 4
+  greatTime: 7
+  goodTime: 12
