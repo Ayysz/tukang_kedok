@@ -100,10 +100,10 @@ TextureImporter:
       name: asset klik_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 0
-        width: 246
-        height: 252
+        x: 9
+        y: 3
+        width: 242
+        height: 248
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

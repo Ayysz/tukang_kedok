@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4741848225220427010}
   - component: {fileID: 9094685937993068198}
   - component: {fileID: 4343635117817230207}
+  - component: {fileID: 8909829768131744413}
   m_Layer: 0
   m_Name: MaskStep3 Sanding
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 249834863561749688}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.138, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -67,6 +68,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SandingProgression
   painter: {fileID: 9094685937993068198}
   finishTarget: 0.2
+  finished: 0
 --- !u!114 &9094685937993068198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,6 +105,24 @@ MonoBehaviour:
   isSanding: 1
   amplasSound: {fileID: 8300000, guid: f415a27956ab3c74c901dea80f3e09d4, type: 3}
   soundDelay: 1
+  effectDelay: 0
+--- !u!114 &8909829768131744413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249834863561749688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7634548fd5351e5429882d580f90d2cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotateWithRightClick
+  rotateSpeed: 0.3
+  rotateX: 1
+  rotateY: 1
+  rotateZ: 0
+  isCanRotate: 1
 --- !u!1 &384350938320856467
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,7 +153,7 @@ Transform:
   m_GameObject: {fileID: 384350938320856467}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: -1.2966926, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -232,6 +252,7 @@ MonoBehaviour:
   isSanding: 1
   amplasSound: {fileID: 0}
   soundDelay: 1
+  effectDelay: 0
 --- !u!114 &5912766390150187419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,6 +267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SandingProgression
   painter: {fileID: 8808445782490625050}
   finishTarget: 0.7
+  finished: 0
 --- !u!1 &1855896565175557222
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,7 +294,7 @@ Transform:
   m_GameObject: {fileID: 1855896565175557222}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.418288, y: 0.5, z: 6.1426044}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -330,7 +352,7 @@ Transform:
   m_GameObject: {fileID: 2179425907774959868}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: -1.3296926, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -426,6 +448,7 @@ GameObject:
   - component: {fileID: 3287684268178036719}
   - component: {fileID: 2270367526221890051}
   - component: {fileID: 8749725224872784406}
+  - component: {fileID: 8715375906452879970}
   m_Layer: 0
   m_Name: AccStep3 hole
   m_TagString: Untagged
@@ -442,7 +465,7 @@ Transform:
   m_GameObject: {fileID: 2280831177627552637}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.15261039, y: 0.20548397, z: -0.004557107}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -505,6 +528,23 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8715375906452879970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2280831177627552637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7634548fd5351e5429882d580f90d2cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotateWithRightClick
+  rotateSpeed: 0.3
+  rotateX: 1
+  rotateY: 1
+  rotateZ: 0
+  isCanRotate: 1
 --- !u!1 &2395382928429846654
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,6 +556,7 @@ GameObject:
   - component: {fileID: 1905859669438087551}
   - component: {fileID: 6419159244904013706}
   - component: {fileID: 2148766171282754488}
+  - component: {fileID: 5969168450150247340}
   m_Layer: 0
   m_Name: AccStep1 Sculpt
   m_TagString: Untagged
@@ -532,7 +573,7 @@ Transform:
   m_GameObject: {fileID: 2395382928429846654}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.15261039, y: 0.20548397, z: -0.004557107}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -595,6 +636,23 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5969168450150247340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2395382928429846654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7634548fd5351e5429882d580f90d2cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotateWithRightClick
+  rotateSpeed: 0.3
+  rotateX: 1
+  rotateY: 1
+  rotateZ: 0
+  isCanRotate: 1
 --- !u!1 &3807795516909500680
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,7 +680,7 @@ Transform:
   m_GameObject: {fileID: 3807795516909500680}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071069, y: -0, z: -0, w: 0.70710677}
-  m_LocalPosition: {x: 0.15261045, y: 0.10048398, z: -0.0045570433}
+  m_LocalPosition: {x: 0, y: 0.088, z: -0.029}
   m_LocalScale: {x: 100, y: 99.99998, z: 99.99998}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -696,6 +754,7 @@ GameObject:
   - component: {fileID: 1455856284348616205}
   - component: {fileID: 304813813061434783}
   - component: {fileID: 2918501393654057492}
+  - component: {fileID: 6677585684026666436}
   m_Layer: 0
   m_Name: MaskStep1 sculpt
   m_TagString: Untagged
@@ -712,7 +771,7 @@ Transform:
   m_GameObject: {fileID: 4958219797506119233}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: -1.1916926, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -775,6 +834,23 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6677585684026666436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4958219797506119233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7634548fd5351e5429882d580f90d2cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotateWithRightClick
+  rotateSpeed: 0.3
+  rotateX: 1
+  rotateY: 1
+  rotateZ: 0
+  isCanRotate: 1
 --- !u!1 &7158473422584581439
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,6 +862,7 @@ GameObject:
   - component: {fileID: 5685214565001481289}
   - component: {fileID: 2541040852102536182}
   - component: {fileID: 3568475501892346071}
+  - component: {fileID: 2157297638656273961}
   m_Layer: 0
   m_Name: MaskStep4 Cement
   m_TagString: Untagged
@@ -802,7 +879,7 @@ Transform:
   m_GameObject: {fileID: 7158473422584581439}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: -1.1916926, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -865,6 +942,23 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2157297638656273961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7158473422584581439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7634548fd5351e5429882d580f90d2cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotateWithRightClick
+  rotateSpeed: 0.3
+  rotateX: 1
+  rotateY: 1
+  rotateZ: 0
+  isCanRotate: 1
 --- !u!1 &7424331597548636460
 GameObject:
   m_ObjectHideFlags: 0
@@ -890,7 +984,7 @@ Transform:
   m_GameObject: {fileID: 7424331597548636460}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0110220015, y: -0.0008099973, z: -0.019804478}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -916,6 +1010,7 @@ GameObject:
   - component: {fileID: 4364990414677883534}
   - component: {fileID: 6394017779310297086}
   - component: {fileID: 4109744509581815898}
+  - component: {fileID: 2658215767448288412}
   m_Layer: 0
   m_Name: MaskStep2 Hole
   m_TagString: Untagged
@@ -932,7 +1027,7 @@ Transform:
   m_GameObject: {fileID: 7475659055910473603}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: -1.1916926, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -995,6 +1090,23 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2658215767448288412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7475659055910473603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7634548fd5351e5429882d580f90d2cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotateWithRightClick
+  rotateSpeed: 0.3
+  rotateX: 1
+  rotateY: 1
+  rotateZ: 0
+  isCanRotate: 1
 --- !u!1 &7576072724176529366
 GameObject:
   m_ObjectHideFlags: 0
@@ -1021,7 +1133,7 @@ Transform:
   m_GameObject: {fileID: 7576072724176529366}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.105, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1036,7 +1148,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7576072724176529366}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7634548fd5351e5429882d580f90d2cb, type: 3}
   m_Name: 
@@ -1078,7 +1190,7 @@ Transform:
   m_GameObject: {fileID: 7953314880960431335}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.15261039, y: 0.20548397, z: -0.004557107}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1155,6 +1267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SandingProgression
   painter: {fileID: 8664673687032639848}
   finishTarget: 0.12
+  finished: 0
 --- !u!114 &8664673687032639848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1191,6 +1304,7 @@ MonoBehaviour:
   isSanding: 1
   amplasSound: {fileID: 8300000, guid: f415a27956ab3c74c901dea80f3e09d4, type: 3}
   soundDelay: 1
+  effectDelay: 0
 --- !u!64 &3124630523266691881
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1241,6 +1355,7 @@ GameObject:
   - component: {fileID: 6135066169458469074}
   - component: {fileID: 2248747793617874866}
   - component: {fileID: 4668005565634799271}
+  - component: {fileID: 8002034730890714251}
   m_Layer: 0
   m_Name: AccStep4 sement (sculpt)
   m_TagString: Untagged
@@ -1257,7 +1372,7 @@ Transform:
   m_GameObject: {fileID: 8277263461202709299}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.15261039, y: 0.20548397, z: -0.004557107}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1320,3 +1435,20 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8002034730890714251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8277263461202709299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7634548fd5351e5429882d580f90d2cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotateWithRightClick
+  rotateSpeed: 0.3
+  rotateX: 1
+  rotateY: 1
+  rotateZ: 0
+  isCanRotate: 1
