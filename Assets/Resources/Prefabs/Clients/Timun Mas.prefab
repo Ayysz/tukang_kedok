@@ -59,7 +59,6 @@ MonoBehaviour:
   objectState:
   - {fileID: 4144072987501589778}
   - {fileID: 4378993528294781276}
-  PopOut: {fileID: 0}
 --- !u!114 &2115263136429041829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,7 +192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8073044290507521645, guid: ea5fd2adcb9958947b52de8324806453, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.886
+      value: -0.673
       objectReference: {fileID: 0}
     - target: {fileID: 8073044290507521645, guid: ea5fd2adcb9958947b52de8324806453, type: 3}
       propertyPath: m_LocalPosition.z
@@ -272,7 +271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4926420455852304353, guid: 0bac4ffd9a4d7274980177f1e459b7e4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.886
+      value: -0.616
       objectReference: {fileID: 0}
     - target: {fileID: 4926420455852304353, guid: 0bac4ffd9a4d7274980177f1e459b7e4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -316,7 +315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6095112581289099138, guid: 0bac4ffd9a4d7274980177f1e459b7e4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

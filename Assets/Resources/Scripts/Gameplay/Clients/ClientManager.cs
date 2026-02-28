@@ -22,12 +22,22 @@ public class ClientManager : MonoBehaviour
         Destroy(currentClientPeople.gameObject);
     }
     public void SpawnClientPeople(ClientData data)
-    { 
-        ClientPeople people = Instantiate(data.clientPeople,clientPeoplePos.transform.position,Quaternion.identity);
+    {
+        ClientPeople people = Instantiate(data.clientPeople, clientPeoplePos.transform.position, Quaternion.identity);
         currentClientPeople = people;
         people.SetDialogue(GameManager.Instance.mainDialogue);
         people.SetDataFirstTime(data);
-        people.transform.DOMove(clientPeopleStopPos.position,1f).SetEase(Ease.OutQuad).OnComplete(ClientStop);
+        people.transform.DOMove(clientPeopleStopPos.position, 1f).SetEase(Ease.OutQuad).OnComplete(ClientStop);
+        if (data.firstEnterClip.Length > 0)
+        {
+            for (int i = 0; i < data.firstEnterClip.Length; i++)
+            {
+                AudioManager.Instance.PlaySfx(data.firstEnterClip[i]);
+            }
+        }
+
+
+
     }
     public void ClientPeopleOut(Action action)
     {
@@ -38,11 +48,11 @@ public class ClientManager : MonoBehaviour
     {
         OnClientPeopleOut.Invoke();
         OnClientPeopleOut = null;
-        
+
     }
     public void ClientStop()
     {
         currentClientPeople.StartClient();
-        
+
     }
 }

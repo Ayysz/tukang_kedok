@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26ca868ff7333b54d90c1f627dad6341, type: 3}
   m_Name: Malin Kundang Hole 1
   m_EditorClassIdentifier: Assembly-CSharp::MinigameHoleSettingSO
-  maxCombo: 3
+  maxCombo: 10
   MoveSpeed: 300
   MaxMoveSpeed: 1000
   AccelerationInterval: 50

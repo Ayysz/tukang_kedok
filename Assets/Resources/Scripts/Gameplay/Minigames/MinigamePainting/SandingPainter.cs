@@ -13,22 +13,32 @@ public class SandingPainter : MonoBehaviour
     Texture2D maskTexture;
     Material runtimeMaterial;
 
-    void Start()
+    void Awake()
     {
+        if (targetRenderer == null)
+        {
+            Debug.LogError("Target Renderer belum di-assign");
+            return;
+        }
         // Duplikat material supaya tidak mengubah asset asli
         runtimeMaterial = targetRenderer.material;
 
         // Buat mask texture kosong
         maskTexture = new Texture2D(textureSize, textureSize, TextureFormat.RGBA32, false);
         maskTexture.wrapMode = TextureWrapMode.Clamp;
+        //Addon
+        maskTexture.filterMode = FilterMode.Bilinear;
 
         ClearMask();
 
         runtimeMaterial.SetTexture("_MaskTex", maskTexture);
+        Debug.Log("Has property : MaskText : " + runtimeMaterial.HasProperty("_MaskTex"));
+
     }
 
     public void Paint(Vector2 uv)
     {
+        Debug.Log("Paint called with UV: " + uv);
         int centerX = (int)(uv.x * textureSize);
         int centerY = (int)(uv.y * textureSize);
         int radius = Mathf.RoundToInt(brushSize);

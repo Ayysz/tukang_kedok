@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     public DialogueController playerDialogue;
     public TaskController taskAtasController;
     public CameraChangeController cameraChangeController;
-
+    public FinalScoreManager finalScoreManager;
     public MaskData MaskData;
 
     public List<MaskData> maskScoring = new List<MaskData>();
@@ -38,6 +38,8 @@ public class GameManager : MonoBehaviour
     public ToolManager toolManager;
     public GameObject starBackground;
 
+    [SerializeField] private AudioClip cameraChangeClip;
+
     private void Awake()
     {
         Instance = this;
@@ -45,6 +47,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        
         StartCoroutine(StartGameCoroutine());
     }
 
@@ -55,14 +58,34 @@ public class GameManager : MonoBehaviour
         taskAtasController.SetTaskLines(cp.GetMaskData().GetMaskDataSO().craftingTypes, cp.GetMaskData().currentProgress);
         toolManager.SelectTool(cp.GetMaskData().GetMaskDataSO().craftingTypes[cp.GetMaskData().currentProgress]);
     }
-    public void CompletedAMask()
+    public void CompletedAMask(Action action)
     {
+        //nanti di refactor jangan lupa
+        ResultManager.Instance.Show(clientManager.currentClientPeople.GetData().clientName, clientManager.currentClientPeople.GetMaskData().score, clientManager.currentClientPeople.GetMaskData(),action);
         clientManager.currentClientPeople.State2();
         starBackground.gameObject.SetActive(true);
         maskAnimator.SetTrigger("Mask Done");
-        camAnimator.SetTrigger("Change");
+        camAnimator.SetTrigger("ChangeCustomer");
+       
         StartCoroutine(AfterAMaskDelat());
+        taskAtasController.Hide();
      
+    }
+    
+    public void CameraChange()
+    {
+        camAnimator.SetTrigger("Change");
+        AudioManager.Instance.PlaySfx(cameraChangeClip);
+
+    }
+    public void CameraFinalScore()
+    {
+        camAnimator.SetTrigger("Final");
+        starBackground.gameObject.SetActive(true);
+        AudioManager.Instance.PlaySfx(cameraChangeClip);
+        finalScoreManager.ShowFinalScore();
+
+
     }
     private IEnumerator AfterAMaskDelat()
     {
@@ -76,7 +99,8 @@ public class GameManager : MonoBehaviour
     public void AfterOkay()
     {
         camAnimator.SetTrigger("Change");
-      
+        AudioManager.Instance.PlaySfx(cameraChangeClip);
+
 
 
     }
@@ -131,7 +155,10 @@ public class GameManager : MonoBehaviour
     private IEnumerator WinDelay()
     {
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene("Main Menu");
+        // All Score Display!
+        CameraFinalScore();
+
+        //SceneManager.LoadScene("Main Menu");
     }
     public void SetPlayerDialogue(DialogueSO dialogue,Action action)
     {
@@ -168,9 +195,9 @@ public class GameManager : MonoBehaviour
                 isMainGame = false;
 
                 MaskData md = clientManager.currentClientPeople.GetMaskData();
-                MinigameHoleSettingSO holeSetting = md.GetMaskDataSO().minigameSettingDatas[md.currentProgress] as MinigameHoleSettingSO;
+                MinigamePaintSettingSO paintSetting = md.GetMaskDataSO().minigameSettingDatas[md.currentProgress] as MinigamePaintSettingSO;
                 minigameControllers[2].OnEndMinigame += MinigameClear;
-                minigameControllers[2].StartMinigame(holeSetting);
+                minigameControllers[2].StartMinigame(paintSetting);
 
             }
             else if (craftingType == CraftingType.Cement)

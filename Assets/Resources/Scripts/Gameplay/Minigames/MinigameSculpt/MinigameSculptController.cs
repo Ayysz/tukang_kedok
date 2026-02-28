@@ -40,20 +40,40 @@ public class MinigameSculptController : MinigamePlayController
     [SerializeField] private AudioClip popFail;
 
 
+
+
     public override void StartMinigame(MinigameSettingDataSO dataSetting)
     {
         base.StartMinigame(dataSetting);
+   
+    }
+    public override void GameStart()
+    {
+        base.GameStart();
         toolsAnimator.gameObject.SetActive(true);
         toolsAnimator.SetTrigger("Hammer Start");
-       
+
         circleCount = targetCircleDatas.Count;
         totalScore = 0;
         curCircleCount = 0;
+        scoreText.text = "0";
+      
+        if (isSkip)
+        {
+            isPlaying = false;
+            WinGame();
+        }
+        else { 
+            StartCoroutine(StartDelay());
+        }
+    }
+    private IEnumerator StartDelay()
+    {
+        yield return new WaitForSeconds(1f);
         for (int i = 0; i < targetCircleDatas.Count; i++)
         {
             StartCoroutine(SpawnTargetCircle(targetCircleDatas[i].delay, targetCircleDatas[i]));
         }
-
     }
     public void AddCircleCount()
     {
@@ -72,10 +92,8 @@ public class MinigameSculptController : MinigamePlayController
         isPlaying = false;
         
         EndMinigameScene();
-        foreach (Transform t in parent)
-        {
-            Destroy(t.gameObject);
-        }
+
+        ClientManager.Instance.currentClientPeople.GetMaskData().AddScore((int)totalScore);
         StartCoroutine(WinDelay());
     }
     public IEnumerator WinDelay()
@@ -84,11 +102,22 @@ public class MinigameSculptController : MinigamePlayController
         toolsAnimator.gameObject.SetActive(false);
         EndMinigame();
     }
+    public override void EndMinigame()
+    {
+        foreach (Transform t in parent)
+        {
+            Destroy(t.gameObject);
+        }
+        base.EndMinigame();
+     
+    }
     public void Fail()
     {
         AudioManager.Instance.PlaySfx(popFail);
+        AudioManager.Instance.PlaySfx(AudioManager.Instance.GlobalAudioList.badSfx);
         AddCircleCount();
         totalScore += failScore;
+        UpdateScore((int)totalScore);
         Debug.Log("Fail");
         toolsAnimator.SetTrigger("Hammer Slow");
         maskAnimator.SetTrigger("Mask Hammer Slow");
@@ -97,8 +126,11 @@ public class MinigameSculptController : MinigamePlayController
     public void Good()
     {
         AudioManager.Instance.PlaySfx(popFail);
+        AudioManager.Instance.PlaySfx(AudioManager.Instance.GlobalAudioList.goodSfx);
+
         AddCircleCount();
         totalScore += GoodScore;
+        UpdateScore((int)totalScore);
         Debug.Log("Good");
         toolsAnimator.SetTrigger("Hammer Slow");
         maskAnimator.SetTrigger("Mask Hammer Slow");
@@ -108,8 +140,10 @@ public class MinigameSculptController : MinigamePlayController
     public void Great()
     {
         AudioManager.Instance.PlaySfx(pop);
+        AudioManager.Instance.PlaySfx(AudioManager.Instance.GlobalAudioList.greatSfx);
         AddCircleCount();
         totalScore += GreatScore;
+        UpdateScore((int)totalScore);
         Debug.Log("Great");
         toolsAnimator.SetTrigger("Hammer Slow");
         maskAnimator.SetTrigger("Mask Hammer Slow");
@@ -118,8 +152,10 @@ public class MinigameSculptController : MinigamePlayController
     public void Perfect()
     {
         AudioManager.Instance.PlaySfx(pop);
+        AudioManager.Instance.PlaySfx(AudioManager.Instance.GlobalAudioList.perfectSfx);
         AddCircleCount();
         totalScore += PerfectScore;
+        UpdateScore((int)totalScore);
         Debug.Log("Perfect");
         toolsAnimator.SetTrigger("Hammer Hard");
         maskAnimator.SetTrigger("Mask Hammer Hard");

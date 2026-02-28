@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MinigameSculptTarget : MonoBehaviour
 {
@@ -10,10 +11,12 @@ public class MinigameSculptTarget : MonoBehaviour
     [SerializeField] private float circlePerfectThreshold;
     [SerializeField] private float circleGreatThreshold;
     [SerializeField] private float targetSize;
+    
 
 
     [SerializeField] private MinigameSculptCircle circlePrefab;
-
+    [SerializeField] private RectTransform rectTransform;
+    [SerializeField] private Image measureImage;
     public Action OnFailed;
     public Action OnPerfect;
     public Action OnGreat;
@@ -34,7 +37,9 @@ public class MinigameSculptTarget : MonoBehaviour
         circlePerfectThreshold = greatThreshold;
         circleGreatThreshold = perfectThreshold;
         this.targetSize = targetSize;
+        rectTransform.sizeDelta = new Vector2(targetSize, targetSize);
         StartCoroutine(SpawnDelay());
+       
     }
     private void OnDestroy()
     {
@@ -42,6 +47,10 @@ public class MinigameSculptTarget : MonoBehaviour
         OnPerfect = null;
         OnGreat = null;
         OnGood = null;
+    }
+    public void HideMeasurement()
+    { 
+        measureImage.enabled = false;
     }
     public IEnumerator SpawnDelay()
     { 
@@ -51,6 +60,7 @@ public class MinigameSculptTarget : MonoBehaviour
         c.OnPerfect += OnPerfect;
         c.OnGreat += OnGreat;
         c.OnGood += OnGood;
+        c.SetOnClicked(HideMeasurement);
         c.Set(circleSpeed, circleStartSize, circleGreatThreshold, circlePerfectThreshold,targetSize);
       
     }

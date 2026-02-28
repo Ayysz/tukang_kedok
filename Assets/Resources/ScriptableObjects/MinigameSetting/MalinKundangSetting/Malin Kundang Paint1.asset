@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2cfff266387ce240b7c3a5a88a36bcb, type: 3}
   m_Name: Malin Kundang Paint1
   m_EditorClassIdentifier: Assembly-CSharp::MinigamePaintSettingSO
+  scoringMeasurement: 1000
+  scoreTarget: 0.4

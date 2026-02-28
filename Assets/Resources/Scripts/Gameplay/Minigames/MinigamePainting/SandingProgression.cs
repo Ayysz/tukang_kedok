@@ -6,23 +6,33 @@ public class SandingProgression : MonoBehaviour
     public SandingPainter painter;
     [Range(0f, 1f)]
     public float finishTarget = 0.8f;
-    public Action OnFinished;
 
-    bool finished;
+    public Action OnFinished;
+    public Action<float> OnSanding;
+    [SerializeField] bool finished;
+
+    float proggress = -1;
 
     void Update()
     {
         if (finished) return;
 
         float progress = CalculateProgress();
-
-        if (progress >= finishTarget)
+        if (proggress != progress)
         {
-            finished = true;
-            OnFinished?.Invoke();
-            OnFinished = null;
-            Debug.Log("AMPLAS SELESAI!");
+            proggress = progress;
+            OnSanding?.Invoke(progress);
+            if (progress >= finishTarget)
+            {
+                OnSanding?.Invoke(progress); // Pastikan progress mencapai 100% saat selesai
+                OnFinished?.Invoke();
+                finished = true;
+                Debug.Log("AMPLAS SELESAI!");
+                OnFinished = null;
+                OnSanding = null;
+            }
         }
+
     }
 
     float CalculateProgress()

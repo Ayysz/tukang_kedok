@@ -15,9 +15,11 @@ public class MinigameCementCircle : MonoBehaviour
     private float speed = 10f;
     bool isActive;
 
-    public Action OnDestroyed;
+    public Action<MinigameCementCircle> OnDestroyed;
 
-    public void SetData(float startSize,float sizeShrinkValue,Action action)
+    [SerializeField] private AudioClip clip;
+
+    public void SetData(float startSize,float sizeShrinkValue,Action<MinigameCementCircle> action)
     {
         OnDestroyed += action;
         this.startSize = startSize;
@@ -31,6 +33,7 @@ public class MinigameCementCircle : MonoBehaviour
     public void Shrink()
     {
         targetSize -= sizeShrinkValue;
+        AudioManager.Instance.PlaySfx(clip);
     }
     private void Update()
     {
@@ -39,9 +42,9 @@ public class MinigameCementCircle : MonoBehaviour
         {
             curSize -= Time.deltaTime *speed;
             rectTransform.sizeDelta = new Vector2(curSize, curSize);
-            if (curSize < 0)
+            if (curSize <= 0)
             {
-                OnDestroyed?.Invoke();
+                OnDestroyed?.Invoke(this);
                 OnDestroyed = null;
                 isActive = false;
             }

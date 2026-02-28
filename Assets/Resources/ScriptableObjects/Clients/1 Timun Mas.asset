@@ -20,3 +20,7 @@ MonoBehaviour:
   doneDialogue: {fileID: 11400000, guid: 0af7b164e55fb694491263d90eda3ed1, type: 2}
   startMCDialogue: {fileID: 11400000, guid: d24e255b28935f64388f16993ea1e8cc, type: 2}
   maskDataSO: {fileID: 11400000, guid: 335e301c6f7798645bef947648a484dd, type: 2}
+  firstEnterClip:
+  - {fileID: 8300000, guid: 6e16f4fe0e9250f48a95c1bd7ae69b94, type: 3}
+  doneClip:
+  - {fileID: 8300000, guid: 6e16f4fe0e9250f48a95c1bd7ae69b94, type: 3}

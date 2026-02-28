@@ -19,8 +19,10 @@ public class MinigameSculptCircle : MonoBehaviour
     public Action OnGreat;
     public Action OnGood;
     public Action OnFailed;
+    public Action OnClicked;
 
     public MinigameSculptTarget target;
+    [SerializeField] private MinigamesScoreEffect minigamesScoreEffect;
     private void Update()
     {
         if (isShrinking)
@@ -39,7 +41,7 @@ public class MinigameSculptCircle : MonoBehaviour
             }
         }
     }
-    public void SetAction(Action Fail,Action Good,Action Great,Action Perfect)
+    public void SetAction(Action Fail, Action Good, Action Great, Action Perfect)
     {
         OnFailed += Fail;
         OnGood += Good;
@@ -52,8 +54,13 @@ public class MinigameSculptCircle : MonoBehaviour
         OnGood = null;
         OnGreat = null;
         OnPerfect = null;
+        OnClicked = null;
     }
-    public void Set(float Speed, float Size,float GreatThreshold,float PerfectThreshold,float targetSize)
+    public void SetOnClicked(Action Clicked)
+    {
+        OnClicked += Clicked;
+    }
+    public void Set(float Speed, float Size, float GreatThreshold, float PerfectThreshold, float targetSize)
     {
         shrinkingSpeed = Speed;
         this.GreatThreshold = GreatThreshold;
@@ -62,6 +69,7 @@ public class MinigameSculptCircle : MonoBehaviour
         this.targetSize = targetSize;
         curSize = Size;
         isShrinking = true;
+        minigamesScoreEffect.gameObject.SetActive(false);
     }
     public void Failed()
     {
@@ -69,7 +77,11 @@ public class MinigameSculptCircle : MonoBehaviour
         OnFailed = null;
         isShrinking = false;
         image.color = Color.red;
-        
+        image.raycastTarget = false;
+        image.enabled = false;
+        minigamesScoreEffect.gameObject.SetActive(true);
+        minigamesScoreEffect.SetText(MinigamesScoreEffectType.BAD);
+        OnClicked?.Invoke();
     }
     public void Perfect()
     {
@@ -77,6 +89,10 @@ public class MinigameSculptCircle : MonoBehaviour
         OnPerfect = null;
         isShrinking = false;
         image.color = Color.green;
+        image.enabled = false;
+
+        minigamesScoreEffect.gameObject.SetActive(true);
+        minigamesScoreEffect.SetText(MinigamesScoreEffectType.PERFECT);
     }
     public void Great()
     {
@@ -84,6 +100,10 @@ public class MinigameSculptCircle : MonoBehaviour
         OnGreat = null;
         isShrinking = false;
         image.color = Color.blue;
+        image.enabled = false;
+
+        minigamesScoreEffect.gameObject.SetActive(true);
+        minigamesScoreEffect.SetText(MinigamesScoreEffectType.GREAT);
     }
     public void Good()
     {
@@ -91,25 +111,87 @@ public class MinigameSculptCircle : MonoBehaviour
         OnGood = null;
         isShrinking = false;
         image.color = Color.yellow;
+        image.enabled = false;
+
+        minigamesScoreEffect.gameObject.SetActive(true);
+        minigamesScoreEffect.SetText(MinigamesScoreEffectType.GOOD);
     }
     public void Clicked()
     {
-        float size = curSize - targetSize;
-        if (size > perfectThreshold || size < -perfectThreshold)
+        if (!isShrinking) return;
+        //float diff = Mathf.Abs(curSize - targetSize);
+
+        if (curSize > targetSize)
         {
             Perfect();
-
-        } else
-        {
-            if (size > GreatThreshold || size < -GreatThreshold)
+            ImpactEffect(MinigamesScoreEffectType.PERFECT);
+        }
+        else { 
+            float diff = targetSize - curSize;
+            Debug.Log(diff + " " + perfectThreshold);
+            if (diff <= perfectThreshold)
             {
                 Great();
+                ImpactEffect(MinigamesScoreEffectType.GREAT);
             }
-            else
+            else if (diff <= GreatThreshold)
             {
                 Good();
+                ImpactEffect(MinigamesScoreEffectType.GOOD);
+            }
+            else {
+                Failed();
+                ImpactEffect(MinigamesScoreEffectType.BAD);
             }
         }
-       
+
+        image.raycastTarget = false;
+        OnClicked?.Invoke();
+        
+    }
+    private void ImpactEffect(MinigamesScoreEffectType type)
+    {
+        VisualEffect effect = null;
+        if (type == MinigamesScoreEffectType.PERFECT)
+        {
+            effect = ObjectPooler.DequeueObject<VisualEffect>("PerfectEffect");
+        }
+        else if (type == MinigamesScoreEffectType.GREAT)
+        {
+            effect = ObjectPooler.DequeueObject<VisualEffect>("GreatEffect");
+        }
+        else if (type == MinigamesScoreEffectType.GOOD)
+        {
+            effect = ObjectPooler.DequeueObject<VisualEffect>("GoodEffect");
+        }
+        else if (type == MinigamesScoreEffectType.BAD)
+        {
+            effect = ObjectPooler.DequeueObject<VisualEffect>("BadEffect");
+        }
+        effect.Setup();
+        // Convert UI position to world position so the effect is visible to the camera
+        Canvas canvas = GetComponentInParent<Canvas>();
+        Camera uiCamera = null;
+        if (canvas != null)
+        {
+            uiCamera = canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : canvas.worldCamera;
+        }
+
+        Vector3 worldPosition;
+        // Use the center of the rectTransform in screen space
+        Vector2 screenPoint = RectTransformUtility.WorldToScreenPoint(uiCamera, rectTransform.position);
+
+        // Convert screen point to world point in the main camera
+        Camera mainCamera = Camera.main;
+        if (mainCamera != null)
+        {
+            Vector3 effectWorldPos = mainCamera.ScreenToWorldPoint(new Vector3(screenPoint.x, screenPoint.y, mainCamera.nearClipPlane + 1f));
+            effect.transform.position = effectWorldPos;
+        }
+        else
+        {
+            // fallback: just use rectTransform.position
+            effect.transform.position = rectTransform.position;
+        }
     }
 }

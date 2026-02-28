@@ -18,56 +18,56 @@ MonoBehaviour:
       position: {x: -10, y: 10}
       delay: 0
       Size: 500
-      perfectThreshold: 10
-      GreatThreshold: 15
+      perfectThreshold: 50
+      GreatThreshold: 100
       shrinkingSpeed: 400
-      targetSize: 100
+      targetSize: 250
   - delay: 1
     data:
       position: {x: -100, y: 100}
       delay: 0
       Size: 500
-      perfectThreshold: 10
-      GreatThreshold: 15
+      perfectThreshold: 50
+      GreatThreshold: 100
       shrinkingSpeed: 400
-      targetSize: 100
+      targetSize: 250
   - delay: 2
     data:
       position: {x: 100, y: 100}
       delay: 0
       Size: 500
-      perfectThreshold: 10
-      GreatThreshold: 15
+      perfectThreshold: 50
+      GreatThreshold: 100
       shrinkingSpeed: 400
-      targetSize: 100
+      targetSize: 250
   - delay: 3
     data:
       position: {x: 100, y: -100}
       delay: 0
       Size: 500
-      perfectThreshold: 10
-      GreatThreshold: 15
+      perfectThreshold: 50
+      GreatThreshold: 100
       shrinkingSpeed: 400
-      targetSize: 100
+      targetSize: 250
   - delay: 4
     data:
       position: {x: 400, y: 400}
       delay: 0
       Size: 500
-      perfectThreshold: 10
-      GreatThreshold: 15
+      perfectThreshold: 50
+      GreatThreshold: 100
       shrinkingSpeed: 400
-      targetSize: 100
+      targetSize: 250
   - delay: 5
     data:
       position: {x: 400, y: 0}
       delay: 0
       Size: 500
-      perfectThreshold: 10
-      GreatThreshold: 15
+      perfectThreshold: 50
+      GreatThreshold: 100
       shrinkingSpeed: 400
       targetSize: 100
-  PerfectScore: 12
-  GreatScore: 8
-  GoodScore: 5
-  failScore: 1
+  PerfectScore: 100
+  GreatScore: 80
+  GoodScore: 50
+  failScore: 20
