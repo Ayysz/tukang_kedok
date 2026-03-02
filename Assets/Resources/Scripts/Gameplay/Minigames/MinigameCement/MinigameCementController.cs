@@ -54,7 +54,8 @@ public class MinigameCementController : MinigamePlayController
         currentTime = 0;
         toolsAnimator.gameObject.SetActive(true);
         toolsAnimator.SetTrigger("Cungkil Start Cement");
-        scoreText.text = "0";
+        score = 0;
+        scoreText.text = ClientManager.Instance.currentClientPeople.GetMaskData().score.ToString();
         performText.text = "";
         circleLeft = cementCircleList.Count;
         for (int i = 0; i < cementCircleList.Count; i++)
@@ -75,6 +76,7 @@ public class MinigameCementController : MinigamePlayController
         circleLeft--;
         toolsAnimator.SetTrigger("Cungkil Cement");
         maskAnimator.SetTrigger("Mask Cement");
+        int tscore = ClientManager.Instance.currentClientPeople.GetMaskData().score;
         if (circleLeft <= 0)
         {
             isPlaying = false;
@@ -84,28 +86,28 @@ public class MinigameCementController : MinigamePlayController
         {
             AudioManager.Instance.PlaySfx(AudioManager.Instance.GlobalAudioList.perfectSfx);
             score += perfectScore;
-            UpdateScore(score);
+            UpdateScore(score,perfectScore);
             ImpactEffect(MinigamesScoreEffectType.PERFECT, circle.GetComponent<RectTransform>());
         }
         else if (currentTime <= greatTime)
         {
             AudioManager.Instance.PlaySfx(AudioManager.Instance.GlobalAudioList.greatSfx);
             score += greatScore;
-            UpdateScore(score);
+            UpdateScore(score,greatScore);
             ImpactEffect(MinigamesScoreEffectType.GREAT, circle.GetComponent<RectTransform>());
         }
         else if (currentTime <= goodTime)
         {
             AudioManager.Instance.PlaySfx(AudioManager.Instance.GlobalAudioList.goodSfx);
             score += goodScore;
-            UpdateScore(score);
+            UpdateScore(score,goodScore);
             ImpactEffect(MinigamesScoreEffectType.GOOD, circle.GetComponent<RectTransform>());
         }
         else
         {
             AudioManager.Instance.PlaySfx(AudioManager.Instance.GlobalAudioList.badSfx);
             score += badScore;
-            UpdateScore(score);
+            UpdateScore(score,badScore);
             ImpactEffect(MinigamesScoreEffectType.BAD, circle.GetComponent<RectTransform>());
         }
     }

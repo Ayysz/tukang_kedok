@@ -17,7 +17,6 @@ MonoBehaviour:
   clientDescription: 
   clientPeople: {fileID: 7746896139397401030, guid: 5297090be2a5c8444835f37fd261d16e, type: 3}
   startDialogue: {fileID: 11400000, guid: 00ecbf1167fd6d54386d48d6f002933b, type: 2}
-  doneDialogue: {fileID: 11400000, guid: 516840c7efb41394a9f7d442cc01a77e, type: 2}
   startMCDialogue: {fileID: 11400000, guid: d24e255b28935f64388f16993ea1e8cc, type: 2}
   maskDataSO: {fileID: 11400000, guid: 27cd8172e3c1c374ba86a2b85517e571, type: 2}
   firstEnterClip:
@@ -25,3 +24,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4364945fa204e4f41ba1ba33f5c5b993, type: 3}
   doneClip:
   - {fileID: 8300000, guid: 35d1ef8535cd1e04faeb6ab8e35a12dc, type: 3}
+  scoreMin: 1000
+  doneDialogue: {fileID: 11400000, guid: 516840c7efb41394a9f7d442cc01a77e, type: 2}
+  doneDialogueFail: {fileID: 11400000, guid: 497ac9b742402c8449fb1e96dd6f148b, type: 2}

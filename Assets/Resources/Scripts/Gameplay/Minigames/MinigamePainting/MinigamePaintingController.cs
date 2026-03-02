@@ -27,6 +27,7 @@ public class MinigamePaintingController : MinigamePlayController
         sandingInputOld.SetIcon(icon.rectTransform);
         RotateWithRightClick rotateWithRightClick = go.GetComponent<RotateWithRightClick>();
         Debug.Log("StartMinigame Sanding");
+        scoreText.text = ClientManager.Instance.currentClientPeople.GetMaskData().score.ToString();
 
         if (sandingInputOld != null)
         {
@@ -40,7 +41,8 @@ public class MinigamePaintingController : MinigamePlayController
             {
                 score = Mathf.RoundToInt(progress * scoringMeasurement);
                 Debug.Log("Sanding : " + " Score: " + score);
-                scoreText.text = score.ToString();
+                int tscore = ClientManager.Instance.currentClientPeople.GetMaskData().score;
+                scoreText.text = (score + tscore).ToString();
             };
         }
         if (isSkip)
@@ -108,6 +110,7 @@ public class MinigamePaintingController : MinigamePlayController
         sandingProgression.OnFinished -= Finish;
         score = Mathf.RoundToInt(scoreTarget * scoringMeasurement);
         EndMinigameScene();
+        int tscore = ClientManager.Instance.currentClientPeople.GetMaskData().score;
         UpdateScore(score);
         yield return new WaitForSeconds(2);
         EndMinigame();

@@ -90,13 +90,21 @@ public class MinigamePlayController : UIManager
         //ClearMask();
 
     }
-    public void UpdateScore(int score)
+    public void UpdateScore(int score,int addedScore)
     {
         if (scoreTweenCoroutine != null)
         {
             StopCoroutine(scoreTweenCoroutine);
         }
-        scoreTweenCoroutine = StartCoroutine(TweenScore(this.score, score, 0.5f));
+        int tscore = GameManager.Instance.clientManager.currentClientPeople.GetMaskData().score;
+        int before = this.score - addedScore;
+        scoreTweenCoroutine = StartCoroutine(TweenScore(before+tscore, score+tscore, 0.5f));
+    }
+    public void UpdateScore(int score)
+    {
+        int tscore = GameManager.Instance.clientManager.currentClientPeople.GetMaskData().score;
+       // int before = this.score - addedScore;
+        scoreText.text = (score+ tscore).ToString();
     }
 
     private IEnumerator TweenScore(int from, int to, float duration)
@@ -112,15 +120,14 @@ public class MinigamePlayController : UIManager
             elapsed += Time.deltaTime;
             float t = Mathf.Clamp01(elapsed / duration);
             int currentScore = Mathf.RoundToInt(Mathf.Lerp(startScore, endScore, t));
-            scoreText.text = currentScore.ToString();
-
+            // scoreText.text = currentScore.ToString();
+            scoreText.text = (currentScore).ToString(); ;
             // Tween scale for popup effect
             float scaleT = Mathf.Sin(t * Mathf.PI); // Ease in-out popup
             scoreText.transform.localScale = Vector3.Lerp(originalScale, popupScale, scaleT);
 
             yield return null;
         }
-        this.score = to;
         scoreText.text = to.ToString();
         scoreText.transform.localScale = originalScale;
         scoreTweenCoroutine = null;

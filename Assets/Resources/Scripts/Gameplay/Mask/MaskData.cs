@@ -7,6 +7,7 @@ public class MaskData
     public int currentProgress;
     public int score;
     public bool isCompleted;
+    public int minScore;
     public int MaxProgress()
     { 
         return GetMaskDataSO().maxProgress;
@@ -17,6 +18,7 @@ public class MaskData
         this.currentProgress = progress;
         score = 0;
         isCompleted = false;
+        minScore = GetMaskDataSO().minScore;
     }
     public void AddScore(int s)
     {
@@ -32,6 +34,18 @@ public class MaskData
         if (currentProgress >= MaxProgress())
         {
             isCompleted = true;
+        }
+      
+    }
+    public bool IsSuccess()
+    {
+        if (score >= minScore)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 

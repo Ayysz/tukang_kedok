@@ -16,7 +16,7 @@ public class RotateWithRightClick : MonoBehaviour
     void Update()
     {
         // Saat klik kanan pertama kali ditekan
-        if (!isCanRotate || GameManager.Instance.isMainGame) return;
+        if (!isCanRotate) return;
         if (Input.GetMouseButtonDown(1))
         {
             lastMousePosition = Input.mousePosition;

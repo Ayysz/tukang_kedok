@@ -54,6 +54,11 @@ public class MiniGameQTEBarController : MinigamePlayController
     public float minFalloffDist = 20f;
     public float maxFalloffDist = 70f;
 
+    [SerializeField] private int perfectScore;
+    [SerializeField] private int greatScore;
+    [SerializeField] private int goodScore;
+    [SerializeField] private int failScore;
+
     float CurrentCombo = 0;
     bool isShaking = false;
 
@@ -82,7 +87,8 @@ public class MiniGameQTEBarController : MinigamePlayController
         UtilizeSafeZoneWidth();
         toolsAnimator.gameObject.SetActive(true);
         toolsAnimator.SetTrigger("Cungkil Start Pahat");
-        UpdateScore(0);
+        score = 0;
+        scoreText.text = ClientManager.Instance.currentClientPeople.GetMaskData().score.ToString();
         MainCamera.enabled = true;
         // ShakeCamera.enabled = false;
 
@@ -109,6 +115,12 @@ public class MiniGameQTEBarController : MinigamePlayController
         MinimumSafeZoneWidth = data.MinimumSafeZoneWidth;
         MaximumSafeZoneWidth = data.MaximumSafeZoneWidth;
         MaxCombo = data.maxCombo;
+
+        perfectScore = data.perfectScore;
+        greatScore = data.greatScore;
+        goodScore = data.goodScore;
+        failScore = data.failScore;
+
     }
 
 
@@ -336,8 +348,8 @@ public class MiniGameQTEBarController : MinigamePlayController
             if (distanceToEdge <= GreatValue)
             {
                 result = "Perfect";
-                score += holeSettingSO.perfectScore;
-                UpdateScore(score);
+                score += perfectScore;
+                UpdateScore(score,perfectScore);
                 ImpactEffect(MinigamesScoreEffectType.PERFECT);
                 Perform(MinigamesScoreEffectType.PERFECT);
                 AudioManager.Instance.PlaySfx(AudioManager.Instance.GlobalAudioList.perfectSfx);
@@ -346,8 +358,8 @@ public class MiniGameQTEBarController : MinigamePlayController
             {
 
                 result = "Great";
-                score += holeSettingSO.greatScore;
-                UpdateScore(score);
+                score += greatScore;
+                UpdateScore(score,greatScore);
                 ImpactEffect(MinigamesScoreEffectType.GREAT);
                 Perform(MinigamesScoreEffectType.GREAT);
 
@@ -356,8 +368,8 @@ public class MiniGameQTEBarController : MinigamePlayController
             else
             {
                 result = "Great";
-                score += holeSettingSO.greatScore;
-                UpdateScore(score);
+                score += greatScore;
+                UpdateScore(score,greatScore);
                 ImpactEffect(MinigamesScoreEffectType.GREAT);
                 Perform(MinigamesScoreEffectType.GREAT);
 
@@ -370,8 +382,8 @@ public class MiniGameQTEBarController : MinigamePlayController
             if (distanceToEdge <= GoodValue)
             {
                 result = "Near Miss";
-                score += holeSettingSO.goodScore;
-                UpdateScore(score);
+                score += goodScore;
+                UpdateScore(score,goodScore);
                 ImpactEffect(MinigamesScoreEffectType.GOOD);
                 Perform(MinigamesScoreEffectType.GOOD);
 
@@ -382,8 +394,8 @@ public class MiniGameQTEBarController : MinigamePlayController
             else
             {
                 result = "Bad";
-                score += holeSettingSO.failScore;
-                UpdateScore(score);
+                score += failScore;
+                UpdateScore(score,failScore);
                 ImpactEffect(MinigamesScoreEffectType.BAD);
                 Perform(MinigamesScoreEffectType.BAD);
 

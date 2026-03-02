@@ -8,10 +8,12 @@ public class ClientData : ScriptableObject
     public string clientDescription;
     public ClientPeople clientPeople;
     public DialogueSO startDialogue;
-    public DialogueSO doneDialogue;
     public DialogueSO startMCDialogue;
     public MaskDataSO maskDataSO;
     public AudioClip[] firstEnterClip;
     public AudioClip[] doneClip;
+
+    public DialogueSO doneDialogue;
+    public DialogueSO doneDialogueFail;
    
 }

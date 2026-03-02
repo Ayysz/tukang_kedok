@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 
 public enum CameraType
-{ 
+{
     mainGame,
     MinigameHole,
     MinigameSculpt,
@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        
+
         StartCoroutine(StartGameCoroutine());
     }
 
@@ -61,17 +61,26 @@ public class GameManager : MonoBehaviour
     public void CompletedAMask(Action action)
     {
         //nanti di refactor jangan lupa
-        ResultManager.Instance.Show(clientManager.currentClientPeople.GetData().clientName, clientManager.currentClientPeople.GetMaskData().score, clientManager.currentClientPeople.GetMaskData(),action);
-        clientManager.currentClientPeople.State2();
+        ResultManager.Instance.Show(clientManager.currentClientPeople.GetData().clientName, clientManager.currentClientPeople.GetMaskData().score, clientManager.currentClientPeople.GetMaskData(), action);
+
+
+        if (clientManager.currentClientPeople.GetMaskData().IsSuccess())
+        {
+            clientManager.currentClientPeople.State2();
+        }
+        else
+        {
+            clientManager.currentClientPeople.State3();
+        }
         starBackground.gameObject.SetActive(true);
         maskAnimator.SetTrigger("Mask Done");
         camAnimator.SetTrigger("ChangeCustomer");
-       
+
         StartCoroutine(AfterAMaskDelat());
         taskAtasController.Hide();
-     
+
     }
-    
+
     public void CameraChange()
     {
         camAnimator.SetTrigger("Change");
@@ -121,12 +130,12 @@ public class GameManager : MonoBehaviour
     }
 
     public void StartGame()
-    { 
+    {
         Debug.Log("Game Started!");
         proggress = 0;
         CurrentClientData = ClientDatabase.Instance.GetClient(proggress);
         clientManager.SpawnClientPeople(CurrentClientData);
-        
+
 
     }
     public void ClientDone()
@@ -146,7 +155,8 @@ public class GameManager : MonoBehaviour
             Debug.Log("Win Game");
             StartCoroutine(WinDelay());
         }
-        else {
+        else
+        {
             clientManager.DestroyCurrentPeople();
             CurrentClientData = ClientDatabase.Instance.GetClient(proggress);
             clientManager.SpawnClientPeople(CurrentClientData);
@@ -160,7 +170,7 @@ public class GameManager : MonoBehaviour
 
         //SceneManager.LoadScene("Main Menu");
     }
-    public void SetPlayerDialogue(DialogueSO dialogue,Action action)
+    public void SetPlayerDialogue(DialogueSO dialogue, Action action)
     {
         playerDialogue.SetDialogue(dialogue, action);
     }
@@ -209,7 +219,7 @@ public class GameManager : MonoBehaviour
                 minigameControllers[3].StartMinigame(holeSetting);
             }
         }
-        
+
     }
     public void MinigameClear()
     {
@@ -218,7 +228,7 @@ public class GameManager : MonoBehaviour
         cp.AddProggress();
         isMainGame = true;
 
-        
+
     }
     public void ChangeCamera(CameraType type)
     {
@@ -239,5 +249,5 @@ public class GameManager : MonoBehaviour
             cameraChangeController.ChangeCameraActive(3);
         }
     }
-    
+
 }

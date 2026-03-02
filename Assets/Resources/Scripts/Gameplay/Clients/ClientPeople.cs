@@ -46,7 +46,13 @@ public class ClientPeople : MonoBehaviour
                 }
             }
             GameManager.Instance.CompletedAMask(()=> {
-                dialogue.SetDialogue(data.doneDialogue, DoneEnd);
+                if (GetMaskData().IsSuccess())
+                {
+                    dialogue.SetDialogue(data.doneDialogue, DoneEnd);
+                }
+                else {
+                    dialogue.SetDialogue(data.doneDialogueFail, DoneEnd);
+                }
                 // GameManager.Instance.AfterOkay();
                 GameManager.Instance.HideTaskAtas();
                 GameManager.Instance.CameraChange();
@@ -61,10 +67,18 @@ public class ClientPeople : MonoBehaviour
     {
         objectState[0].SetActive(true);
         objectState[1].SetActive(false);
+        objectState[2].SetActive(false);
     }
     public void State2()
     {
         objectState[1].SetActive(true);
+        objectState[0].SetActive(false);
+        objectState[2].SetActive(false);
+    }
+    public void State3()
+    {
+        objectState[2].SetActive(true);
+        objectState[1].SetActive(false);
         objectState[0].SetActive(false);
     }
     public MaskData GetMaskData()
