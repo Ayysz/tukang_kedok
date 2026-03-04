@@ -1405,7 +1405,7 @@ MonoBehaviour:
   rotateX: 1
   rotateY: 1
   rotateZ: 0
-  isCanRotate: 1
+  isCanRotate: 0
 --- !u!1 &7292349425343603245
 GameObject:
   m_ObjectHideFlags: 0

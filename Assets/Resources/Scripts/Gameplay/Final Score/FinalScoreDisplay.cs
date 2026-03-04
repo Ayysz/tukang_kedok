@@ -19,9 +19,11 @@ public class FinalScoreDisplay : MonoBehaviour
             Destroy(t.gameObject);
         }
         MaskDisplay maskDisplay = Instantiate(maskDataSO.maskDisplayPrefab, maskParent);
+       
         maskDisplay.transform.position = maskParent.position;
         maskDisplay.transform.rotation = maskParent.rotation;
         maskDisplay.DisplayMask(data.currentProgress);
+        maskDisplay.GetRotateWithRightClick().isCanRotate = false;
     }
     private void Update()
     {

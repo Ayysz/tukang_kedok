@@ -18,4 +18,8 @@ public class MaskDisplay : MonoBehaviour
         curProgIndex = progress;
         progressionDisplay[curProgIndex].SetActive(true);
     }
+    public RotateWithRightClick GetRotateWithRightClick()
+    {
+        return progressionDisplay[curProgIndex].GetComponent<RotateWithRightClick>();
+    }
 }

@@ -1289,4 +1289,4 @@ MonoBehaviour:
   rotateX: 1
   rotateY: 1
   rotateZ: 0
-  isCanRotate: 1
+  isCanRotate: 0

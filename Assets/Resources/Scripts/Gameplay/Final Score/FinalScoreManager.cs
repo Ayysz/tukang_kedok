@@ -11,7 +11,7 @@ public class FinalScoreManager : MonoBehaviour
         FinalScoreUI.Show();
         for (int i = 0; i < GameManager.Instance.maskScoring.Count; i++)
         {
-            finalScoreDisplays[i].gameObject.SetActive(true);
+            finalScoreDisplays[i].gameObject.SetActive(true);   
             finalScoreDisplays[i].SetData(GameManager.Instance.maskScoring[i]);
         }
     }

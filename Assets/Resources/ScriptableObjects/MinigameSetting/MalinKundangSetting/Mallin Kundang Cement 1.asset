@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: Mallin Kundang Cement 1
   m_EditorClassIdentifier: Assembly-CSharp::MinigameCementSettingSO
   cementCircleDatas:
-  - sizeShrinkValue: 50
+  - sizeShrinkValue: 100
     size: 200
     position: {x: -200, y: 200}
-  - sizeShrinkValue: 50
+  - sizeShrinkValue: 100
     size: 400
     position: {x: 400, y: 100}
-  - sizeShrinkValue: 50
+  - sizeShrinkValue: 100
     size: 350
     position: {x: 400, y: -300}
-  - sizeShrinkValue: 50
+  - sizeShrinkValue: 100
     size: 200
     position: {x: -400, y: -300}
   perfectScore: 100

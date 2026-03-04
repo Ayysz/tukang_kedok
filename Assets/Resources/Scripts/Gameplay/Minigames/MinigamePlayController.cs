@@ -90,11 +90,13 @@ public class MinigamePlayController : UIManager
         //ClearMask();
 
     }
+    Vector3 origScale;
     public void UpdateScore(int score,int addedScore)
     {
         if (scoreTweenCoroutine != null)
         {
             StopCoroutine(scoreTweenCoroutine);
+            scoreText.transform.localScale = origScale; // Reset scale if tween is interrupted
         }
         int tscore = GameManager.Instance.clientManager.currentClientPeople.GetMaskData().score;
         int before = this.score - addedScore;
@@ -113,6 +115,7 @@ public class MinigamePlayController : UIManager
         int startScore = from;
         int endScore = to;
         Vector3 originalScale = scoreText.transform.localScale;
+        origScale = originalScale;
         Vector3 popupScale = originalScale * 1.3f;
 
         while (elapsed < duration)
