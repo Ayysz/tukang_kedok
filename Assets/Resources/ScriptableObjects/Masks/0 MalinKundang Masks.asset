@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MaskDataSO
   id: 0
   maxProgress: 8
-  minScore: 3000
+  minScore: 2800
   maskName: Malin Kundang
   craftingTypes: 0000000002000000010000000300000000000000010000000200000003000000
   minigameSettingDatas:

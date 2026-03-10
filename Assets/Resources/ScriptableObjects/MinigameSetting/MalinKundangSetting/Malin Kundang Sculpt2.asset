@@ -21,7 +21,7 @@ MonoBehaviour:
       perfectThreshold: 10
       GreatThreshold: 15
       shrinkingSpeed: 200
-      targetSize: 100
+      targetSize: 150
   - delay: 0.5
     data:
       position: {x: 100, y: 0}
@@ -30,7 +30,7 @@ MonoBehaviour:
       perfectThreshold: 10
       GreatThreshold: 15
       shrinkingSpeed: 200
-      targetSize: 100
+      targetSize: 150
   - delay: 1
     data:
       position: {x: 300, y: 0}
@@ -38,8 +38,8 @@ MonoBehaviour:
       Size: 400
       perfectThreshold: 10
       GreatThreshold: 15
-      shrinkingSpeed: 400
-      targetSize: 100
+      shrinkingSpeed: 300
+      targetSize: 150
   - delay: 2
     data:
       position: {x: 300, y: -200}
@@ -47,8 +47,8 @@ MonoBehaviour:
       Size: 400
       perfectThreshold: 10
       GreatThreshold: 15
-      shrinkingSpeed: 400
-      targetSize: 100
+      shrinkingSpeed: 300
+      targetSize: 150
   - delay: 4
     data:
       position: {x: 0, y: 0}
@@ -56,8 +56,8 @@ MonoBehaviour:
       Size: 500
       perfectThreshold: 10
       GreatThreshold: 15
-      shrinkingSpeed: 400
-      targetSize: 100
+      shrinkingSpeed: 300
+      targetSize: 150
   - delay: 5
     data:
       position: {x: 0, y: 0}
@@ -65,8 +65,8 @@ MonoBehaviour:
       Size: 500
       perfectThreshold: 10
       GreatThreshold: 15
-      shrinkingSpeed: 400
-      targetSize: 100
+      shrinkingSpeed: 300
+      targetSize: 150
   PerfectScore: 12
   GreatScore: 8
   GoodScore: 5

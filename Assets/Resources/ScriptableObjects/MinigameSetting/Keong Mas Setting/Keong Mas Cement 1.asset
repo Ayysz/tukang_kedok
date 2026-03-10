@@ -25,10 +25,16 @@ MonoBehaviour:
   - sizeShrinkValue: 100
     size: 200
     position: {x: -400, y: -300}
-  perfectScore: 0
-  greatScore: 0
-  goodScore: 0
-  badScore: 0
-  perfectTime: 0
-  greatTime: 0
-  goodTime: 0
+  - sizeShrinkValue: 100
+    size: 200
+    position: {x: -600, y: -500}
+  - sizeShrinkValue: 100
+    size: 300
+    position: {x: -750, y: 200}
+  perfectScore: 120
+  greatScore: 80
+  goodScore: 50
+  badScore: 30
+  perfectTime: 6
+  greatTime: 8
+  goodTime: 12

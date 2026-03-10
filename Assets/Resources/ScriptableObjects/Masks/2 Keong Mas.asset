@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MaskDataSO
   id: 2
   maxProgress: 6
-  minScore: 1000
+  minScore: 5000
   maskName: Keong Mas
   craftingTypes: 020000000000000001000000000000000100000000000000
   minigameSettingDatas:

@@ -27,8 +27,8 @@ MonoBehaviour:
     position: {x: -400, y: -400}
   perfectScore: 100
   greatScore: 75
-  goodScore: 35
+  goodScore: 45
   badScore: 20
-  perfectTime: 4
-  greatTime: 7
+  perfectTime: 6
+  greatTime: 8
   goodTime: 12

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MaskDataSO
   id: 1
   maxProgress: 7
-  minScore: 3000
+  minScore: 4200
   maskName: Mas Timun
   craftingTypes: 00000000020000000100000000000000020000000000000000000000
   minigameSettingDatas:

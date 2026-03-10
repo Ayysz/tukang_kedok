@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2cfff266387ce240b7c3a5a88a36bcb, type: 3}
   m_Name: Keong Mas Paint1
   m_EditorClassIdentifier: Assembly-CSharp::MinigamePaintSettingSO
+  scoringMeasurement: 1200
+  scoreTarget: 0.8

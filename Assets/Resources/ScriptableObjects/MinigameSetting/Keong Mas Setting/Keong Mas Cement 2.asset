@@ -13,15 +13,28 @@ MonoBehaviour:
   m_Name: Keong Mas Cement 2
   m_EditorClassIdentifier: Assembly-CSharp::MinigameCementSettingSO
   cementCircleDatas:
-  - sizeShrinkValue: 50
+  - sizeShrinkValue: 100
     size: 200
     position: {x: 0, y: 0}
-  - sizeShrinkValue: 50
+  - sizeShrinkValue: 100
     size: 400
     position: {x: 200, y: 200}
-  - sizeShrinkValue: 50
+  - sizeShrinkValue: 100
     size: 500
     position: {x: 150, y: -300}
-  - sizeShrinkValue: 50
+  - sizeShrinkValue: 100
     size: 100
     position: {x: -400, y: -400}
+  - sizeShrinkValue: 100
+    size: 100
+    position: {x: -400, y: -800}
+  - sizeShrinkValue: 100
+    size: 100
+    position: {x: -800, y: -400}
+  perfectScore: 120
+  greatScore: 80
+  goodScore: 50
+  badScore: 30
+  perfectTime: 6
+  greatTime: 8
+  goodTime: 12

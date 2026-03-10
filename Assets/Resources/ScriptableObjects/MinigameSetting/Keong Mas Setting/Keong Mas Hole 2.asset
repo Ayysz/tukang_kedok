@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26ca868ff7333b54d90c1f627dad6341, type: 3}
   m_Name: Keong Mas Hole 2
   m_EditorClassIdentifier: Assembly-CSharp::MinigameHoleSettingSO
-  maxCombo: 4
+  maxCombo: 10
   MoveSpeed: 350
   MaxMoveSpeed: 1000
   AccelerationInterval: 150
   MinimumSafeZoneWidth: 200
   MaximumSafeZoneWidth: 400
+  perfectScore: 125
+  greatScore: 75
+  goodScore: 50
+  failScore: 20

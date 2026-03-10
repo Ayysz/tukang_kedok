@@ -33,7 +33,7 @@ MonoBehaviour:
       targetSize: 100
   - delay: 2
     data:
-      position: {x: 100, y: 100}
+      position: {x: 200, y: 100}
       delay: 0
       Size: 500
       perfectThreshold: 10
@@ -42,7 +42,7 @@ MonoBehaviour:
       targetSize: 100
   - delay: 3
     data:
-      position: {x: 100, y: -100}
+      position: {x: 400, y: -100}
       delay: 0
       Size: 500
       perfectThreshold: 10
@@ -67,7 +67,7 @@ MonoBehaviour:
       GreatThreshold: 15
       shrinkingSpeed: 400
       targetSize: 100
-  PerfectScore: 12
-  GreatScore: 8
-  GoodScore: 5
-  failScore: 1
+  PerfectScore: 100
+  GreatScore: 75
+  GoodScore: 50
+  failScore: 35

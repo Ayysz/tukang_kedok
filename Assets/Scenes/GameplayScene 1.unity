@@ -8060,7 +8060,7 @@ MonoBehaviour:
   dialogueBubble: {fileID: 11333661}
   dialogueIndex: 0
   currentDialogueSO: {fileID: 0}
-  next: {fileID: 0}
+  next: {fileID: 8300000, guid: 9693936b95ee6484f8e16b09a1f1c91b, type: 3}
 --- !u!1 &1009793220
 GameObject:
   m_ObjectHideFlags: 0
