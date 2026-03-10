@@ -20,7 +20,7 @@ public class MinigamePaintingController : MinigamePlayController
     public override void StartMinigame(MinigameSettingDataSO dataSetting)
     {
         base.StartMinigame(dataSetting);
-       
+
         GameObject go = GameManager.Instance.maskDisplay.GetProgression(GameManager.Instance.clientManager.currentClientPeople.GetMaskData().currentProgress);
         sandingPainter = go.GetComponent<SandingPainter>();
         sandingInputOld = go.GetComponent<SandingInputOld>();
@@ -34,6 +34,7 @@ public class MinigamePaintingController : MinigamePlayController
         {
             sandingInputOld.isSanding = true;
             sandingInputOld.mainCamera = cam;
+            sandingInputOld.SetDustyEffect(hitEffectDusty);
         }
         if (sandingProgression != null)
         {
@@ -44,7 +45,7 @@ public class MinigamePaintingController : MinigamePlayController
                 Debug.Log("Sanding : " + " Score: " + score);
                 int tscore = ClientManager.Instance.currentClientPeople.GetMaskData().score;
                 scoreText.text = (score + tscore).ToString();
-                hitEffectDusty.transform.position = sandingPainter.GetHitEffectPosition();
+                //hitEffectDusty.transform.position = sandingPainter.GetHitEffectPosition();
             };
         }
         if (isSkip)
@@ -105,6 +106,7 @@ public class MinigamePaintingController : MinigamePlayController
         Debug.Log("Minigame Painting Finished");
         AudioManager.Instance.PlaySfx(AudioManager.Instance.GlobalAudioList.perfectSfx);
         ImpactEffect(MinigamesScoreEffectType.PERFECT, icon.rectTransform);
+        hitEffectDusty.Stop();
         StartCoroutine(EndGame());
     }
     public IEnumerator EndGame()

@@ -6964,6 +6964,11 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 1185017201402686965, guid: 93f52ae41ad4e74479e4fed4d20c92c2, type: 3}
   m_PrefabInstance: {fileID: 91450809}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &852123783 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5721015154356603646, guid: ccceaa96b5dd3484a959dc33f94ad86e, type: 3}
+  m_PrefabInstance: {fileID: 2080197115}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &885114187
 GameObject:
   m_ObjectHideFlags: 0
@@ -12620,7 +12625,7 @@ MonoBehaviour:
   icon: {fileID: 2000442879}
   scoringMeasurement: 1000
   scoreTarget: 0.8
-  hitEffectDusty: {fileID: 0}
+  hitEffectDusty: {fileID: 852123783}
 --- !u!1 &1636175187
 GameObject:
   m_ObjectHideFlags: 0
@@ -15439,21 +15444,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hit Effect Dusty (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 3059852223690930704, guid: ccceaa96b5dd3484a959dc33f94ad86e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7137779938432954411, guid: ccceaa96b5dd3484a959dc33f94ad86e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.135
+      value: 0.003
       objectReference: {fileID: 0}
     - target: {fileID: 7137779938432954411, guid: ccceaa96b5dd3484a959dc33f94ad86e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.932
+      value: 0.981
       objectReference: {fileID: 0}
     - target: {fileID: 7137779938432954411, guid: ccceaa96b5dd3484a959dc33f94ad86e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.872
+      value: 5.378
       objectReference: {fileID: 0}
     - target: {fileID: 7137779938432954411, guid: ccceaa96b5dd3484a959dc33f94ad86e, type: 3}
       propertyPath: m_LocalRotation.w

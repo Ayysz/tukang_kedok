@@ -13,6 +13,7 @@ public class SandingInputOld : MonoBehaviour
     [SerializeField] private int effectDelay = 0;
 
     RectTransform icon;
+    [SerializeField] private ParticleSystem dustyEffect;
 
     public void SetIcon(RectTransform data)
     {
@@ -23,6 +24,10 @@ public class SandingInputOld : MonoBehaviour
     private void Start()
     {
         mainCamera = Camera.main;
+    }
+    public void SetDustyEffect(ParticleSystem val)
+    {
+        dustyEffect = val;
     }
     void Update()
     {
@@ -49,7 +54,16 @@ public class SandingInputOld : MonoBehaviour
             if (Physics.Raycast(ray, out RaycastHit hit, 10f, sandingLayer))
             {
                 painter.Paint(hit.textureCoord);
+                if (dustyEffect != null && !dustyEffect.isPlaying)
+                {
+                    dustyEffect.Play();
+                }
+                dustyEffect.transform.position = hit.point;
             }
+        }
+        if (Input.GetMouseButtonUp(0))
+        { 
+            dustyEffect.Stop();
         }
     }
     private void ImpactEffect(MinigamesScoreEffectType type, RectTransform pos)
