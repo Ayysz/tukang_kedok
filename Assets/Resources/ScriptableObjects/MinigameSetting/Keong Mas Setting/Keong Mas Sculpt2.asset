@@ -51,21 +51,21 @@ MonoBehaviour:
       targetSize: 100
   - delay: 4
     data:
-      position: {x: -600, y: -600}
+      position: {x: -600, y: -400}
       delay: 0
       Size: 500
       perfectThreshold: 10
       GreatThreshold: 15
-      shrinkingSpeed: 400
+      shrinkingSpeed: 200
       targetSize: 100
   - delay: 5
     data:
-      position: {x: -359, y: -600}
+      position: {x: -350, y: -400}
       delay: 0
       Size: 500
       perfectThreshold: 10
       GreatThreshold: 15
-      shrinkingSpeed: 400
+      shrinkingSpeed: 200
       targetSize: 100
   - delay: 6
     data:
@@ -74,8 +74,8 @@ MonoBehaviour:
       Size: 500
       perfectThreshold: 10
       GreatThreshold: 15
-      shrinkingSpeed: 400
-      targetSize: 100
+      shrinkingSpeed: 200
+      targetSize: 75
   - delay: 6
     data:
       position: {x: 600, y: 400}
@@ -83,8 +83,8 @@ MonoBehaviour:
       Size: 500
       perfectThreshold: 10
       GreatThreshold: 15
-      shrinkingSpeed: 400
-      targetSize: 100
+      shrinkingSpeed: 200
+      targetSize: 75
   PerfectScore: 120
   GreatScore: 80
   GoodScore: 50

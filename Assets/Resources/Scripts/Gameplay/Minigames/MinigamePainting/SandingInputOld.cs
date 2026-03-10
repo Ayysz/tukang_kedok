@@ -62,8 +62,11 @@ public class SandingInputOld : MonoBehaviour
             }
         }
         if (Input.GetMouseButtonUp(0))
-        { 
-            dustyEffect.Stop();
+        {
+            if (dustyEffect != null)
+            {
+                dustyEffect?.Stop();
+            }
         }
     }
     private void ImpactEffect(MinigamesScoreEffectType type, RectTransform pos)

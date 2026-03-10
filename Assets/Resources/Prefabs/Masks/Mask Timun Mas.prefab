@@ -144,9 +144,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isSanding: 1
-  amplasSound: {fileID: 0}
+  amplasSound: {fileID: 8300000, guid: f415a27956ab3c74c901dea80f3e09d4, type: 3}
   soundDelay: 1
   effectDelay: 0
+  dustyEffect: {fileID: 0}
 --- !u!64 &975897886423721207
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1048,6 +1049,7 @@ MonoBehaviour:
   amplasSound: {fileID: 8300000, guid: f415a27956ab3c74c901dea80f3e09d4, type: 3}
   soundDelay: 1
   effectDelay: 0
+  dustyEffect: {fileID: 0}
 --- !u!114 &8417200815620115468
 MonoBehaviour:
   m_ObjectHideFlags: 0
