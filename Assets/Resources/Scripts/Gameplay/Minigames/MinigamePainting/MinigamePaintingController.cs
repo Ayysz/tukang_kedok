@@ -13,9 +13,10 @@ public class MinigamePaintingController : MinigamePlayController
     [SerializeField] private Image icon;
     [SerializeField] private int scoringMeasurement = 1000;
     [SerializeField] private float scoreTarget = 0.8f;
+    [SerializeField] private ParticleSystem hitEffectDusty;
 
 
-    
+
     public override void StartMinigame(MinigameSettingDataSO dataSetting)
     {
         base.StartMinigame(dataSetting);
@@ -43,6 +44,7 @@ public class MinigamePaintingController : MinigamePlayController
                 Debug.Log("Sanding : " + " Score: " + score);
                 int tscore = ClientManager.Instance.currentClientPeople.GetMaskData().score;
                 scoreText.text = (score + tscore).ToString();
+                hitEffectDusty.transform.position = sandingPainter.GetHitEffectPosition();
             };
         }
         if (isSkip)
