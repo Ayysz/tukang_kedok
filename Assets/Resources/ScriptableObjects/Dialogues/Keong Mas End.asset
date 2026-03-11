@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Keong Mas End
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
   lines:
+  - SpeakerName: Keong Mas
+    Text: '*berubah jadi Putri Candra Kirana*'
   - SpeakerName: Putri Candra Kirana
     Text: Matur nuwun, mas Kedok!

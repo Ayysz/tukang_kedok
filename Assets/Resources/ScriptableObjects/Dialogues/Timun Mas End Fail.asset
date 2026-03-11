@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: Timun Mas End Fail
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
   lines:
-  - SpeakerName: Mas Timun
-    Text: IM PICKLE RIIIIIIKKKK!!....
+  - SpeakerName: Timun Mas
+    Text: '*berubah menjadi timun*'
+  - SpeakerName: Kang Kedok
+    Text: ...sepurane yo ndhuk, ora sengaja.
+  - SpeakerName: Timun
+    Text: ...

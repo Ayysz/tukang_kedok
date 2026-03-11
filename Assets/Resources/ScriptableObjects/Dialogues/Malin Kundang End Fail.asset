@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Malin Kundang End Fail
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
   lines:
+  - SpeakerName: Ibu Malin
+    Text: '*berubah jadi batu seperti Malin*'
   - SpeakerName: Malin Kundang
-    Text: ARGGHHhhh.....
-  - SpeakerName: Malin Kundang
-    Text: .... (jadi batu juga)
+    Text: Eh? Loh?!
+  - SpeakerName: Ibu Malin
+    Text: ...
+  - SpeakerName: Ibu Malin
+    Text: A-ambo mintak maaf!

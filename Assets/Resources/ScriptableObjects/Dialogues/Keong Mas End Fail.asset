@@ -13,5 +13,11 @@ MonoBehaviour:
   m_Name: Keong Mas End Fail
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
   lines:
-  - SpeakerName: Putri Candra Kirana
-    Text: JANJI ITO
+  - SpeakerName: Keong Mas
+    Text: '*berubah jadi manusia setengah keong*'
+  - SpeakerName: Kang Kedok
+    Text: ...?!
+  - SpeakerName: Keong Mas
+    Text: "Kang\u2026"
+  - SpeakerName: Kang Kedok
+    Text: Kula nyuwun agunging pangaksama, Mbak Keong!

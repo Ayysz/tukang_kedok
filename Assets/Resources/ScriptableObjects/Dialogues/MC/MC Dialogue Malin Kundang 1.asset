@@ -10,14 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 640454cc7fb1efa41bac46ab5ba98ccd, type: 3}
-  m_Name: Keong Mas Start
+  m_Name: MC Dialogue Malin Kundang 1
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
   lines:
-  - SpeakerName: Keong Mas
-    Text: ...
-  - SpeakerName: Keong Mas
-    Text: ...
-  - SpeakerName: Kang Kedok
-    Text: apa yang bisa saya bantu?
-  - SpeakerName: Keong Mas
-    Text: ...
+  - SpeakerName: Kedok
+    Text: Baik, mohon tunggu sebentar ya, bu.

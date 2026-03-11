@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
   lines:
   - SpeakerName: Mas Timun
-    Text: Sip lah, nuwun yo mas! Sekarang Buto Ijo gak akan bisa mengenali ku!
+    Text: "*berubah menjadi \u201CMas\u201D Timun*"
+  - SpeakerName: Mas Timun
+    Text: Sip lah, nuwun yo mas! Sekarang Buto Ijo gak akan bisa mengenali ku

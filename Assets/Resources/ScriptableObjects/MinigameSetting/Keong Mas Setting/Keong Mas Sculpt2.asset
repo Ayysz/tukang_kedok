@@ -51,7 +51,7 @@ MonoBehaviour:
       targetSize: 100
   - delay: 4
     data:
-      position: {x: -600, y: -400}
+      position: {x: -200, y: -100}
       delay: 0
       Size: 500
       perfectThreshold: 10
@@ -60,7 +60,7 @@ MonoBehaviour:
       targetSize: 100
   - delay: 5
     data:
-      position: {x: -350, y: -400}
+      position: {x: -200, y: 100}
       delay: 0
       Size: 500
       perfectThreshold: 10
@@ -69,16 +69,16 @@ MonoBehaviour:
       targetSize: 100
   - delay: 6
     data:
-      position: {x: 400, y: 400}
+      position: {x: 200, y: 200}
       delay: 0
       Size: 500
       perfectThreshold: 10
       GreatThreshold: 15
       shrinkingSpeed: 200
       targetSize: 75
-  - delay: 6
+  - delay: 6.5
     data:
-      position: {x: 600, y: 400}
+      position: {x: 400, y: 400}
       delay: 0
       Size: 500
       perfectThreshold: 10
